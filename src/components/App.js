@@ -1,15 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import '../App.css';
 import Header from './Header';
 import LoginSignup from './LoginSignup';
 
 function App() {
-  const [sessionCookie, setLocalSessionCookie] = useState(localStorage.getItem("sessionCookie"))
-  const setSessionCookie = (val) => {setLocalSessionCookie(val); localStorage.setItem("sessionCookie", val)}
+  const [sessionCookie, setSessionCookie] = useState(JSON.parse(localStorage.getItem("sessionCookie")))
+  useEffect(() => { localStorage.setItem("sessionCookie", JSON.stringify(sessionCookie));
+  }, [sessionCookie]);
 
   const isLoggedIn = sessionCookie !== null
-  console.log(sessionCookie, isLoggedIn)
 
   return (
     <div className="App col">
