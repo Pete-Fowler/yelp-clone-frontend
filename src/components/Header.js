@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({isLoggedIn, logOut}) {
+  let userArea = (<Link to="/login">Log In</Link>)
+  if (isLoggedIn) {
+    userArea = ( <button onClick={logOut}> Log Out </button> )
+  }
+
   return (
-    <nav>
+    <nav className="centered row">
       <Link to="/">Home</Link>
       <Link to="/businesses">Businesses</Link>
-      <Link to="/login">Login</Link>
+      {userArea}
     </nav>
   )
 }
