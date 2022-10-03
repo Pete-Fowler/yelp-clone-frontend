@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import style from "./BusinessDetails.module.css"
+import CreateReview from "./CreateReview"
 
 function BusinessDetails({id}) {
   const [name, setName] = useState("")
@@ -65,7 +66,7 @@ function BusinessDetails({id}) {
           <div>
             <h3>Recommended Reviews</h3>
             <h4>Start your review of {name}</h4>
-            {/* add review components */}
+            {<CreateReview />}
           </div>
         </div>
         <div className="col">

@@ -48,12 +48,12 @@ function CreateReview({ addReview }) {
 
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder="name" onChange={handleNameChange} />
+        <form onSubmit={handleSubmit} className="red">
+            <input type="text" name="user" placeholder="User ID" onChange={handleNameChange} />
             <input type="text" name="businessId" placeholder="Business ID" onChange={handleBusinessChange} />
             <input type="text" name="starRating" placeholder="Star Rating" onChange={handleStarChange} />   
             <input type="text" name="description" placeholder="description" onChange={handleCommentChange} />
-            <input type="submit" value="Add Review" />
+            <input type="submit" value="Add Review"  />
         </form>
     )
 
