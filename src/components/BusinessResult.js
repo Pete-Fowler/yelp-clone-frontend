@@ -10,6 +10,8 @@ export default function BusinessResult({ id, name, type, address, reviews, price
 
   const starAverage = starTotal / reviews.length;
 
+  const comment = reviews[0].comment
+
   return <div className={styles.listing}>
     <img className={styles.img} src={image_url} alt='Restaurant or food' />
     <div className={styles.content}>
@@ -19,6 +21,7 @@ export default function BusinessResult({ id, name, type, address, reviews, price
         <span className={styles.type}>{type} </span>
         <span className={styles.price}>{price}</span>
       </div>
+      <div className={styles.comment}>"{comment}" <Link to={``}>more</Link></div>
       <div>{address}</div>
     </div>
   </div>
