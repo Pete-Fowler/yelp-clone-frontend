@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import style from "./BusinessDetails.module.css"
 import CreateReview from "./CreateReview";
 import { dom } from "aria-query";
 
-function BusinessDetails({id}) {
+function BusinessDetails( ) {
   const [name, setName] = useState("")
   const [type, setType] = useState("")
   const [address, setAddress] = useState("")
 
   const navigate = useNavigate()
+  const { id } = useParams();
 
   useEffect(() => {
     fetch(`http://localhost:9292/business/${id}`)
@@ -80,7 +82,7 @@ function BusinessDetails({id}) {
           </div>
         </div>
         <div className="col">
-          <div className="col" className={style.outlineBox}>
+          <div className={`col ${style.outlineBox}`}>
             <h3>Make a Reservation</h3>
             <select style={{width:"100%"}}>
               <option>Mon, Oct 3</option>
@@ -97,7 +99,7 @@ function BusinessDetails({id}) {
               Find a Table
             </button>
           </div>
-          <div className="col" className={style.outlineBox}>
+          <div className={`col ${style.outlineBox}`}>
             <div className="row">
               <a href="#">http://www.businesswebsite.com</a>
               <span role="img"><svg width="24" height="24" class="icon_svg"><path d="M20.47 3.07a.5.5 0 01.53.46v6a.5.5 0 01-.39.49.58.58 0 01-.19 0 .47.47 0 01-.35-.15L17.8 7.6l-5 5a1 1 0 01-1.41 0 1 1 0 010-1.41l5-5-2.27-2.27a.5.5 0 01.35-.85h6zM20 21H4a1 1 0 01-1-1V4a1 1 0 011-1h6a1 1 0 010 2H5v14h14v-5a1 1 0 012 0v6a1 1 0 01-1 1z"></path></svg></span>
