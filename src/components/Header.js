@@ -12,7 +12,7 @@ function Header({ isLoggedIn, logOut, handleSearch }) {
 
   return (
     <nav className={styles.nav}>
-      <Link to="/"><img src={logo} alt='Yelp logo' /></Link>
+      <Link to="/"><img className={styles.logo} src={logo} alt='Yelp logo' /></Link>
       <SearchBar handleSearch={handleSearch}/> 
       <Link to="/businesses">Businesses</Link>
       {userArea}
