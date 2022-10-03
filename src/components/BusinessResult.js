@@ -12,10 +12,14 @@ export default function BusinessResult({ id, name, type, address, reviews, price
 
   return <div className={styles.listing}>
     <Link className={styles.link} to={`/business/${id}`}>{name}</Link>
-    <img src={image_url} alt='Restaurant or food' style={{width: '220px', height: '220px'}}/>
-    <div>{starAverage} Stars ({reviews.length} reviews)</div>
-    <div className={styles.type}>{type}</div><span className={styles.price}>{price}</span>
-    <div>{address}</div>
+    <div className={styles.content}>
+      <img src={image_url} alt='Restaurant or food' style={{width: '220px', height: '220px'}}/>
+      <div className={styles.textContent}>
+        <div>{starAverage} Stars ({reviews.length} reviews)</div>
+        <div className={styles.type}>{type}</div><span className={styles.price}>{price}</span>
+        <div>{address}</div>
+      </div>
+    </div>
   </div>
 }
 

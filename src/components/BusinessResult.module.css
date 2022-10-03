@@ -25,6 +25,16 @@
   text-decoration: underline;
 }
 
+.content {
+  display: flex;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .type {
   font-size: .7rem;
   background-color: #F0F0F0;
