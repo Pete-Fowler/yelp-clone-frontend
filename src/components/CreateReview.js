@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import StarRating from "./StarRating"
-import BusinessDetails from "./BusinessDetails"
+import BusinessDetails, { name } from "./BusinessDetails"
 import "../CreateReview.css"
 
 function CreateReview({ addReview }) {
@@ -51,7 +51,8 @@ function CreateReview({ addReview }) {
 
     return (
         <form onSubmit={handleSubmit} className="form">
-    
+            <p>{/*User.id*/}</p>
+            <p>{/*BusinessDetails.name*/}</p>
             <StarRating />  
             <input type="text" name="description" placeholder="description" onChange={handleCommentChange} />
             <input type="submit" value="Add Review"  />
