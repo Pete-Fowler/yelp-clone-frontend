@@ -6,12 +6,12 @@ import Header from './Header';
 import LoginSignup from './LoginSignup';
 import CreateReview from './CreateReview';
 import StarRating from './StarRating';
+import Footer from './footer';
 
 function App() {
   const [sessionCookie, setSessionCookie] = useState(JSON.parse(localStorage.getItem("sessionCookie")))
   useEffect(() => { localStorage.setItem("sessionCookie", JSON.stringify(sessionCookie));
   }, [sessionCookie]);
-  
 
   const isLoggedIn = sessionCookie !== null
 
@@ -21,11 +21,11 @@ function App() {
     fetch("http://localhost:9292/")
     .then((response) => response.json())
     .then((data) => setReviews(data));
-}, []);
+  }, []);
 
-function addReview(newReview) {
+  function addReview(newReview) {
     setReviews([...reviews, newReview])
-}
+  }
 
   return (
     <div className="App col">
@@ -37,7 +37,7 @@ function addReview(newReview) {
         <Route path="/review" element={<CreateReview  addReview={addReview} />}/>
         <Route path="/business" element={<BusinessDetails id={1}/>}/>
       </Routes>
-      <StarRating />
+      <Footer/>
     </div>
   );
 }
