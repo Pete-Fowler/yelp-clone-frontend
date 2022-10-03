@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom';
 import style from "./BusinessDetails.module.css"
 
-function BusinessDetails({id}) {
+function BusinessDetails( ) {
   const [name, setName] = useState("")
   const [type, setType] = useState("")
   const [address, setAddress] = useState("")
+
+  const { id } = useParams();
 
   useEffect(() => {
     fetch(`http://localhost:9292/business/${id}`)

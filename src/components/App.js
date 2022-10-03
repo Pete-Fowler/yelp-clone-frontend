@@ -41,7 +41,7 @@ function handleSearch(data) {
         <Route path="/businesses" element={<div/>}/>
         <Route path="/review" element={<CreateReview  addReview={addReview} />}/>
         <Route path="/search" element={<SearchResults searchResults={searchResults}/>} />
-        <Route path="/business" element={<BusinessDetails id={1}/>} />
+        <Route path="/business/:id" element={<BusinessDetails />} />
       </Routes>
     </div>
   );

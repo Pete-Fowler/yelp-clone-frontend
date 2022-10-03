@@ -8,6 +8,7 @@ export default function SearchResults({ searchResults }) {
     SearchResults
     {searchResults.map(biz => <BusinessResult 
       key={biz.id} 
+      id={biz.id} 
       name={biz.name} 
       type={biz.business_type}
       address={biz.address}
