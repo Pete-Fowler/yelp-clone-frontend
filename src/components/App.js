@@ -4,6 +4,7 @@ import '../App.css';
 import Header from './Header';
 import LoginSignup from './LoginSignup';
 import CreateReview from './CreateReview';
+import StarRating from './StarRating';
 
 function App() {
   const [sessionCookie, setSessionCookie] = useState(JSON.parse(localStorage.getItem("sessionCookie")))
@@ -36,6 +37,7 @@ function addReview(newReview) {
         <Route path="/business" element={<div/>}/>
         <Route path="/review" element={<CreateReview  addReview={addReview} />}/>
       </Routes>
+      <StarRating />
     </div>
   );
 }
