@@ -4,3 +4,35 @@
 /* Assign to children of row/col to center */
 .row > .centered { align-self: center; margin: auto 0px; }
 .col > .centered { align-self: center; margin: 0px auto; }
+
+/* global vars */
+body {
+  --red: #e00707;
+}
+
+/* input styling */
+button, input, select {
+  display: flex;
+  align-items: center;
+
+  background-color: transparent;
+  border: 0;
+  border: 1px solid #c8c9ca;
+  border-radius: 4px;
+  justify-content: center;
+  padding: 8px 16px;
+}
+button:hover {
+  background-color: rgba(0,0,0,0.12);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.3);
+}
+button.red {
+  background-color: var(--red);
+  border: 0;
+  color: white;
+  fill: white;
+}
+button.red:hover {
+  background-color: rgb(244,13,21);
+  color: rgba(255,255,255,1);
+}
