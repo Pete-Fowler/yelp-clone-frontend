@@ -10,6 +10,13 @@ body {
   --red: #e00707;
 }
 
+/* general stuff */
+.outlineBox {
+  outline: 1px solid #ebebeb;
+  border-radius: 4px;
+  padding: 16px;
+}
+
 /* input styling */
 button, input, select {
   display: flex;

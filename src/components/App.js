@@ -7,6 +7,7 @@ import LoginSignup from './LoginSignup';
 import CreateReview from './CreateReview';
 import SearchResults from './SearchResults';
 import Footer from './footer';
+import Home from './Home';
 
 function App() {
   const [sessionCookie, setSessionCookie] = useState(JSON.parse(localStorage.getItem("sessionCookie")))
@@ -38,7 +39,7 @@ function handleSearch(data) {
     <div className="App col">
       <Header handleSearch={handleSearch} isLoggedIn={isLoggedIn} logOut={()=>{setSessionCookie(null)}}/>
       <Routes>
-        <Route path="/" element={<div/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie}/>}/>
         <Route path="/businesses" element={<div/>}/>
        

@@ -10,12 +10,6 @@
   font-size: 48px;
 }
 
-.outlineBox {
-  outline: 1px solid #ebebeb;
-  border-radius: 4px;
-  padding: 16px;
-}
-
 #controls > button {
   margin: 0 4px;
   font-size: 16px;
