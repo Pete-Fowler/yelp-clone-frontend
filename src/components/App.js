@@ -5,6 +5,7 @@ import BusinessDetails from './BusinessDetails';
 import Header from './Header';
 import LoginSignup from './LoginSignup';
 import CreateReview from './CreateReview';
+import SearchResults from './SearchResults';
 import StarRating from './StarRating';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
   const isLoggedIn = sessionCookie !== null
 
   const [reviews, setReviews] = useState([])
-  const [ searchTerm, setSearchTerm ] = useState('');
+  const [ searchResults, setSearchResults ] = useState('');
 
   useEffect(() => {
     fetch("http://localhost:9292/")
@@ -28,7 +29,7 @@ function addReview(newReview) {
 }
 
 function handleSearch(term) {
-  setSearchTerm(term);
+  setSearchResults(term);
 }
 
   return (
@@ -39,7 +40,8 @@ function handleSearch(term) {
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie}/>}/>
         <Route path="/businesses" element={<div/>}/>
         <Route path="/review" element={<CreateReview  addReview={addReview} />}/>
-        <Route path="/business" element={<BusinessDetails id={1}/>}/>
+        <Route path="/search" element={<SearchResults searchResults={searchResults}/>} />
+        <Route path="/business" element={<BusinessDetails id={1}/>} />
       </Routes>
     </div>
   );

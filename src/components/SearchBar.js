@@ -1,18 +1,25 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './SearchBar.module.css';
 import searchIcon from '../images/searchIcon.svg';
 
 export default function SearchBar ({ handleSearch }) {
   const [ searchTerm, setSearchTerm ] = useState("") 
 
+  const navigate = useNavigate();
+
   function handleChange(e) {
     setSearchTerm(e.target.value);
   }
 
   function handleSubmit(e) {
-    fetch(`http://localhost:9292/search/${term}`)
+    e.preventDefault();
+    fetch(`http://localhost:9292/search/${searchTerm}`)
     .then(res => res.json)
-    .then(data => handleSearch(data));
+    .then(data => {
+      handleSearch(data)
+      navigate('/search')
+    });
   }
 
   return <div className={styles.searchBar}>
