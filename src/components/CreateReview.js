@@ -7,7 +7,7 @@ function CreateReview({ addReview, bizId, bizName }) {
     const [hover, setHover] = useState(0)
     const [comment, setComment] = useState('')
     const [user, setUser] = useState(1)
-    const [stars, setStars] = useState(0)
+   
 
 
     function handleCommentChange(event) {

@@ -13,11 +13,12 @@ function App() {
   const [sessionCookie, setSessionCookie] = useState(JSON.parse(localStorage.getItem("sessionCookie")))
   useEffect(() => { localStorage.setItem("sessionCookie", JSON.stringify(sessionCookie));
   }, [sessionCookie]);
+  
   const isLoggedIn = sessionCookie !== null
 
   const [reviews, setReviews] = useState([])
   const [bizName, setBizName] = useState("")
-  const [ searchResults, setSearchResults ] = useState([]);
+  const [searchResults, setSearchResults ] = useState([]);
   const [bizId, setBizId] = useState(0)
   
 
