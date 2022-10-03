@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './BusinessResult.module.css';
 
-export default function BusinessResult({ id, name, type, address, reviews }) {
+export default function BusinessResult({ id, name, type, address, reviews, price, image_url }) {
  
   const starTotal = reviews.reduce((last, current) => {
     return last + current.star_rating;
@@ -12,9 +12,10 @@ export default function BusinessResult({ id, name, type, address, reviews }) {
 
   return <div className={styles.listing}>
     <Link className={styles.link} to={`/business/${id}`}>{name}</Link>
-    <p>{starAverage} Stars</p>
-    <p>{type}</p>
-    <p>{address}</p>
+    <img src={image_url} alt='Restaurant or food' style={{width: '220px', height: '220px'}}/>
+    <div>{starAverage} Stars ({reviews.length} reviews)</div>
+    <div className={styles.type}>{type}</div><span className={styles.price}>{price}</span>
+    <div>{address}</div>
   </div>
 }
 

@@ -1,0 +1,33 @@
+.listing {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+  width: 75%;
+  height: 270px;
+  box-sizing: border-box;
+}
+
+.listing:hover {
+  transition: .4sec;
+  box-shadow: 0px 0px 8px lightgray;
+  border-radius: 10px;
+}
+
+.link {
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.type {
+  font-size: .7rem;
+  background-color: #F0F0F0;
+  width: fit-content;
+  padding: 5px;
+}

@@ -13,6 +13,8 @@ export default function SearchResults({ searchResults }) {
       type={biz.business_type}
       address={biz.address}
       reviews={biz.reviews}
+      price={biz.price}
+      image_url={biz.image_url}
     />)}
   </div>
 }
