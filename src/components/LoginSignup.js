@@ -48,7 +48,7 @@ function LoginSignup({setSessionCookie}) {
 
       <span style={{color:"red"}}>{errorText}</span>
 
-      <button type="submit">{isLogin?"Log In":"Sign Up"}</button>
+      <button className="red" type="submit">{isLogin?"Log In":"Sign Up"}</button>
 
       <span>
         {isLogin?"New to Yelp?":"Already on Yelp?"}
