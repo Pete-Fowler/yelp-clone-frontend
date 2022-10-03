@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import StarRating from "./StarRating"
 import "../CreateReview.css"
 
-function CreateReview({ addReview, bizId }) {
+function CreateReview({ addReview, bizId, bizName }) {
     const [rating, setRating] = useState(0)
     const [hover, setHover] = useState(0)
     const [comment, setComment] = useState('')
@@ -40,8 +40,8 @@ function CreateReview({ addReview, bizId }) {
     return (
         <form onSubmit={handleSubmit} className="form">
             <p>{/*User.id*/}</p>
-            <p>{bizId}</p>
-            <p>{rating}</p>
+            <h2>{bizName}</h2>
+            <p>Rating: {rating}</p>
             <div className="star-rating" >
                 {[...Array(5)].map((star, index) => {
                     index += 1;        

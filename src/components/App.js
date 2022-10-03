@@ -16,6 +16,7 @@ function App() {
   const isLoggedIn = sessionCookie !== null
 
   const [reviews, setReviews] = useState([])
+  const [bizName, setBizName] = useState("")
   const [ searchResults, setSearchResults ] = useState([]);
   const [bizId, setBizId] = useState(0)
   
@@ -43,9 +44,9 @@ function handleSearch(data) {
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie}/>}/>
         <Route path="/businesses" element={<div/>}/>
        
-        <Route path="/review" element={<CreateReview  addReview={addReview} bizId={bizId} />}/>
+        <Route path="/review" element={<CreateReview  addReview={addReview} bizId={bizId} bizName={bizName}/>}/>
         <Route path="/search" element={<SearchResults searchResults={searchResults}/>} />
-        <Route path="/business/:id" element={<BusinessDetails setBizId={setBizId}/>} />
+        <Route path="/business/:id" element={<BusinessDetails setBizId={setBizId} setBizName={setBizName} bizName={bizName}/>} />
       </Routes>
       <Footer/>
     </div>
