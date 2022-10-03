@@ -33,7 +33,6 @@ function addReview(newReview) {
       <Routes>
         <Route path="/" element={<div/>}/>
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie}/>}/>
-
         <Route path="/businesses" element={<div/>}/>
        
         <Route path="/review" element={<CreateReview  addReview={addReview} />}/>
