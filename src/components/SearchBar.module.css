@@ -1,6 +1,14 @@
 .searchBar {
   height: 48px;
   width: 436px;
-  border: 1px solid black;
-  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  align-items: stretch;
+}
+
+input {
+  width: 100%;
+  height: 48px;
 }
