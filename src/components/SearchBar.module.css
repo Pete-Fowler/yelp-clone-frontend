@@ -1,6 +1,33 @@
 .searchBar {
-  height: 48px;
-  width: 436px;
-  border: 1px solid black;
-  border-radius: 5px;
+  
+}
+
+.form {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.input {
+  width: 100%;
+  padding: 24px 2px;
+  padding-left: 5px;
+  font-size: 1.2rem;
+  border-left: 2px solid gray;
+}
+
+.searchBtn {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.searchIcon {
+  height: 100%;
+  background-color: #E00707;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }

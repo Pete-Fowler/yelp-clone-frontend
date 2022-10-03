@@ -12,9 +12,8 @@ function Header({isLoggedIn, logOut}) {
 
   return (
     <nav className={styles.nav}>
-      <img src={logo} alt='Yelp logo' />
-      <SearchBar />
-      <Link to="/">Home</Link>
+      <Link to="/"><img src={logo} alt='Yelp logo' /></Link>
+      <SearchBar /> 
       <Link to="/businesses">Businesses</Link>
       {userArea}
     </nav>
