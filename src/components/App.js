@@ -39,7 +39,6 @@ function addReview(newReview) {
         <Route path="/review" element={<CreateReview  addReview={addReview} />}/>
         <Route path="/business" element={<BusinessDetails id={1}/>}/>
       </Routes>
-      <StarRating />
     </div>
   );
 }
