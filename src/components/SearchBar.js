@@ -14,11 +14,11 @@ export default function SearchBar ({ handleSearch }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch(`http://localhost:9292/search/${searchTerm}`)
-    .then(res => res.json)
+    fetch(`http://localhost:9292/businesses/search/${searchTerm}`)
+    .then(res => res.json())
     .then(data => {
-      handleSearch(data)
-      navigate('/search')
+      handleSearch(data);
+      navigate('/search');
     });
   }
 

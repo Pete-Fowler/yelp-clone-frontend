@@ -16,7 +16,7 @@ function App() {
   const isLoggedIn = sessionCookie !== null
 
   const [reviews, setReviews] = useState([])
-  const [ searchResults, setSearchResults ] = useState('');
+  const [ searchResults, setSearchResults ] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:9292/")
@@ -28,8 +28,8 @@ function addReview(newReview) {
     setReviews([...reviews, newReview])
 }
 
-function handleSearch(term) {
-  setSearchResults(term);
+function handleSearch(data) {
+  setSearchResults(data);
 }
 
   return (
