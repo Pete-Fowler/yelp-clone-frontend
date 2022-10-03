@@ -8,7 +8,7 @@ export default function BusinessResult({ id, name, type, address, reviews, price
     return last + current.star_rating;
   }, reviews[0].star_rating);
 
-  const starAverage = starTotal / reviews.length;
+  const starAverage = Math.round(starTotal / reviews.length * 10) / 10;
 
   const comment = truncate(reviews[0].comment)
 
