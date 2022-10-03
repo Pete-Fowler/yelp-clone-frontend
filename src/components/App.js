@@ -39,6 +39,7 @@ function handleSearch(data) {
         <Route path="/" element={<div/>}/>
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie}/>}/>
         <Route path="/businesses" element={<div/>}/>
+       
         <Route path="/review" element={<CreateReview  addReview={addReview} />}/>
         <Route path="/search" element={<SearchResults searchResults={searchResults}/>} />
         <Route path="/business/:id" element={<BusinessDetails />} />

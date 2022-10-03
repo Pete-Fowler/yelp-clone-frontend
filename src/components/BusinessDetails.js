@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from "react-router-dom";
 import style from "./BusinessDetails.module.css"
+import CreateReview from "./CreateReview";
+import { dom } from "aria-query";
 
 function BusinessDetails( ) {
   const [name, setName] = useState("")
   const [type, setType] = useState("")
   const [address, setAddress] = useState("")
 
+  const navigate = useNavigate()
   const { id } = useParams();
 
   useEffect(() => {
@@ -18,6 +21,9 @@ function BusinessDetails( ) {
     })
   }, [id])
 
+  function handleReview() {
+    navigate("/review")
+  }
 
   return (
     <div>
@@ -35,7 +41,7 @@ function BusinessDetails( ) {
       <div className="row" id={style.page}>
         <div className="col" id={style.mainContent}>
           <div className="row" id={style.controls}>
-            <button className="red">
+            <button className="red" onClick={handleReview}>
               <span role="img"><svg width="24" height="24" class="icon_svg"><path d="M17.87 22a.93.93 0 01-.46-.12L12 19.08l-5.41 2.84a1 1 0 01-1-.08 1 1 0 01-.4-1l1-6-4.39-4.26a1 1 0 01.56-1.7L8.4 8l2.7-5.48a1 1 0 011.8 0L15.6 8l6 .88a1 1 0 01.56 1.7l-4.38 4.27 1 6a1 1 0 01-1 1.17l.09-.02zM12 17c.163.002.323.04.47.11l4.07 2.15-.78-4.54a1 1 0 01.29-.89l3.3-3.21-4.56-.72a1 1 0 01-.79-.54l-2-4.14-2 4.14a1 1 0 01-.75.54l-4.56.67L8 13.78a1 1 0 01.29.89l-.78 4.54 4.07-2.15A1.12 1.12 0 0112 17z"></path></svg></span>
               Write a review
             </button>
@@ -68,7 +74,10 @@ function BusinessDetails( ) {
           <div>
             <h3>Recommended Reviews</h3>
             <h4>Start your review of {name}</h4>
-            {/* add review components */}
+            <button className="red" onClick={handleReview}>
+              <span role="img"><svg width="24" height="24" class="icon_svg"><path d="M17.87 22a.93.93 0 01-.46-.12L12 19.08l-5.41 2.84a1 1 0 01-1-.08 1 1 0 01-.4-1l1-6-4.39-4.26a1 1 0 01.56-1.7L8.4 8l2.7-5.48a1 1 0 011.8 0L15.6 8l6 .88a1 1 0 01.56 1.7l-4.38 4.27 1 6a1 1 0 01-1 1.17l.09-.02zM12 17c.163.002.323.04.47.11l4.07 2.15-.78-4.54a1 1 0 01.29-.89l3.3-3.21-4.56-.72a1 1 0 01-.79-.54l-2-4.14-2 4.14a1 1 0 01-.75.54l-4.56.67L8 13.78a1 1 0 01.29.89l-.78 4.54 4.07-2.15A1.12 1.12 0 0112 17z"></path></svg></span>
+              Write a review
+            </button>
           </div>
         </div>
         <div className="col">
