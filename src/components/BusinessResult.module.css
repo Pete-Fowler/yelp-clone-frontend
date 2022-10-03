@@ -5,6 +5,8 @@
   width: 75%;
   height: 270px;
   box-sizing: border-box;
+  color: #6e7072;
+  font-size: .9rem;
 }
 
 .listing:hover {
@@ -39,7 +41,6 @@
 .type {
   font-size: .8rem;
   font-weight: 600;
-  color: #6e7072;
   background-color: #F0F0F0;
   width: fit-content;
   padding: 5px;
@@ -47,11 +48,7 @@
 }
 
 .price {
-  color: #6E7072;
-  font-size: .8rem;
   margin-left: 10px;
 }
 
-.comment {
-  font-size: .8rem;
-}
+
