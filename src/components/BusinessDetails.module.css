@@ -1,0 +1,30 @@
+#photoHeader {
+  height: 426px;
+  background-color: black;
+}
+#photoHeader > div {
+  color: white;
+  padding: 64px 40px;
+}
+#photoHeader > div > h1 {
+  font-size: 48px;
+}
+
+.outlineBox {
+  outline: 1px solid #ebebeb;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+#controls > button {
+  margin: 0 4px;
+  font-size: 16px;
+}
+
+#page {
+  margin-top: 24px;
+  padding: 0px 40px;
+}
+#mainContent {
+  flex: 1;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import '../App.css';
+import BusinessDetails from './BusinessDetails';
 import Header from './Header';
 import LoginSignup from './LoginSignup';
 
@@ -19,7 +20,7 @@ function App() {
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie}/>}/>
 
         <Route path="/businesses" element={<div/>}/>
-        <Route path="/business" element={<div/>}/>
+        <Route path="/business" element={<BusinessDetails id={1}/>}/>
       </Routes>
     </div>
   );
