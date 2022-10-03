@@ -36,3 +36,17 @@ button.red:hover {
   background-color: rgb(244,13,21);
   color: rgba(255,255,255,1);
 }
+
+#footer {
+  padding: 60px 0;
+}
+#footer > div {
+  margin: 0 12px;
+}
+#footer a {
+  color: rgba(110,112,114,1);
+  text-decoration: none;
+  line-height: 20px;
+  font-size: 14px;
+  margin-top: 8px;
+}
