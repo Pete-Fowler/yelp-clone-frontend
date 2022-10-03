@@ -9,7 +9,8 @@ export default function SearchResults({ searchResults }) {
     {searchResults.map(biz => <BusinessResult 
       key={biz.id} 
       name={biz.name} 
-      type={biz.type}
+      type={biz.business_type}
+      address={biz.address}
     />)}
   </div>
 }
