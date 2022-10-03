@@ -13,9 +13,11 @@ function App() {
   const [sessionCookie, setSessionCookie] = useState(JSON.parse(localStorage.getItem("sessionCookie")))
   useEffect(() => { localStorage.setItem("sessionCookie", JSON.stringify(sessionCookie));
   }, [sessionCookie]);
+  
   const isLoggedIn = sessionCookie !== null
 
   const [reviews, setReviews] = useState([])
+  const [name, setName] = useState("")
   const [ searchResults, setSearchResults ] = useState([]);
 
   useEffect(() => {
@@ -40,7 +42,7 @@ function handleSearch(data) {
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie}/>}/>
         <Route path="/businesses" element={<div/>}/>
 
-        <Route path="/review" element={<CreateReview  addReview={addReview} />}/>
+        <Route path="/review" element={<CreateReview  addReview={addReview} name={name} bizId={bizId}/>}/>
         <Route path="/search" element={<SearchResults searchResults={searchResults}/>} />
         <Route path="/business/:id" element={<BusinessDetails />} />
       </Routes>

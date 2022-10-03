@@ -3,7 +3,7 @@ import StarRating from "./StarRating"
 import BusinessDetails, { name } from "./BusinessDetails"
 import "../CreateReview.css"
 
-function CreateReview({ addReview }) {
+function CreateReview({ addReview,  }) {
 
     const [comment, setComment] = useState('')
     const [business, setBusiness] = useState('')

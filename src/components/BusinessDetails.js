@@ -5,7 +5,7 @@ import CreateReview from "./CreateReview";
 import { dom } from "aria-query";
 
 function BusinessDetails( ) {
-  const [name, setName] = useState("")
+  
   const [type, setType] = useState("")
   const [address, setAddress] = useState("")
 
