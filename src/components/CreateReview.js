@@ -1,26 +1,14 @@
 import React, { useState } from "react"
 import StarRating from "./StarRating"
-import BusinessDetails, { name } from "./BusinessDetails"
 import "../CreateReview.css"
 
-function CreateReview({ addReview }) {
-
+function CreateReview({ addReview, bizId }) {
+    const [rating, setRating] = useState(0)
+    const [hover, setHover] = useState(0)
     const [comment, setComment] = useState('')
-    const [business, setBusiness] = useState('')
-    const [name, setName] = useState('')
-    const [stars, setStars] = useState('')
+    const [user, setUser] = useState(1)
+    const [stars, setStars] = useState(0)
 
-    function handleNameChange(event) {
-        setName(event.target.value)
-    }
-
-    function handleStarChange(event) {
-        console.log(StarRating.index)
-    }
-
-    function handleBusinessChange(event) {
-        setBusiness(event.target.value)   
-    }
 
     function handleCommentChange(event) {
         setComment(event.target.value)
@@ -31,10 +19,10 @@ function CreateReview({ addReview }) {
         event.preventDefault()
 
         const newReview = {
-            "user_id": name,
-            "business_id": business,
+            "user_id": user,
+            "business_id": bizId,
             "comment": comment,
-            "star_rating": stars,
+            "star_rating": rating,
         }
 
     fetch("http://localhost:9292/review/", {
@@ -52,10 +40,28 @@ function CreateReview({ addReview }) {
     return (
         <form onSubmit={handleSubmit} className="form">
             <p>{/*User.id*/}</p>
-            <p>{/*BusinessDetails.name*/}</p>
-            <StarRating />  
+            <p>{bizId}</p>
+            <p>{rating}</p>
+            <div className="star-rating" >
+                {[...Array(5)].map((star, index) => {
+                    index += 1;        
+                    return (
+                        <button
+                        type="button"
+                        key={index}
+                        className={index <= ((rating && hover) || hover ) ? "on" : "off"}
+                        onClick={() => setRating(index) && setStars(index)}
+                        onMouseEnter={() => setHover(index)}
+                        onMouseLeave={() => setHover(rating)}
+                        >    
+                    <span>&#9733;</span>
+                    </button>             
+                    );
+                })}
+            </div>
             <input type="text" name="description" placeholder="description" onChange={handleCommentChange} />
             <input type="submit" value="Add Review"  />
+   
         </form>
     )
 

@@ -6,7 +6,6 @@ import Header from './Header';
 import LoginSignup from './LoginSignup';
 import CreateReview from './CreateReview';
 import SearchResults from './SearchResults';
-import StarRating from './StarRating';
 import Footer from './footer';
 
 function App() {
@@ -17,6 +16,8 @@ function App() {
 
   const [reviews, setReviews] = useState([])
   const [ searchResults, setSearchResults ] = useState([]);
+  const [bizId, setBizId] = useState(0)
+  
 
   useEffect(() => {
     fetch("http://localhost:9292/")
@@ -32,6 +33,7 @@ function handleSearch(data) {
   setSearchResults(data);
 }
 
+
   return (
     <div className="App col">
       <Header handleSearch={handleSearch} isLoggedIn={isLoggedIn} logOut={()=>{setSessionCookie(null)}}/>
@@ -40,9 +42,9 @@ function handleSearch(data) {
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie}/>}/>
         <Route path="/businesses" element={<div/>}/>
        
-        <Route path="/review" element={<CreateReview  addReview={addReview} />}/>
+        <Route path="/review" element={<CreateReview  addReview={addReview} bizId={bizId} />}/>
         <Route path="/search" element={<SearchResults searchResults={searchResults}/>} />
-        <Route path="/business/:id" element={<BusinessDetails />} />
+        <Route path="/business/:id" element={<BusinessDetails setBizId={setBizId}/>} />
       </Routes>
       <Footer/>
     </div>

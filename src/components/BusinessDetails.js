@@ -5,7 +5,7 @@ import style from "./BusinessDetails.module.css"
 import CreateReview from "./CreateReview";
 import { dom } from "aria-query";
 
-function BusinessDetails( ) {
+function BusinessDetails({ setBizId }) {
   const [name, setName] = useState("")
   const [type, setType] = useState("")
   const [address, setAddress] = useState("")
@@ -19,6 +19,7 @@ function BusinessDetails( ) {
       setName(data.name)
       setType(data.business_type)
       setAddress(data.address)
+      setBizId(data.id)
     })
   }, [id])
 
@@ -26,6 +27,7 @@ function BusinessDetails( ) {
     navigate("/review")
   }
 
+  
   return (
     <div>
       <div id={style.photoHeader}>
@@ -120,7 +122,9 @@ function BusinessDetails( ) {
           </div>
         </div>
       </div>
+      <CreateReview style={{display: "none"}} id={id}/>
     </div>
+    
   )
 }
 
