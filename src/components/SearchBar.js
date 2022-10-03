@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './SearchBar.module.css';
 import searchIcon from '../images/searchIcon.svg';
 
-export default function SearchBar () {
+export default function SearchBar ({ handleSearch }) {
   const [ searchTerm, setSearchTerm ] = useState("") 
 
   function handleChange(e) {
@@ -10,7 +10,9 @@ export default function SearchBar () {
   }
 
   function handleSubmit(e) {
-    
+    fetch(`http://localhost:9292/search/${term}`)
+    .then(res => res.json)
+    .then(data => handleSearch(data));
   }
 
   return <div className={styles.searchBar}>

@@ -12,10 +12,10 @@ function App() {
   useEffect(() => { localStorage.setItem("sessionCookie", JSON.stringify(sessionCookie));
   }, [sessionCookie]);
   
-
   const isLoggedIn = sessionCookie !== null
 
   const [reviews, setReviews] = useState([])
+  const [ searchTerm, setSearchTerm ] = useState('');
 
   useEffect(() => {
     fetch("http://localhost:9292/")
@@ -27,9 +27,13 @@ function addReview(newReview) {
     setReviews([...reviews, newReview])
 }
 
+function handleSearch(term) {
+  setSearchTerm(term);
+}
+
   return (
     <div className="App col">
-      <Header isLoggedIn={isLoggedIn} logOut={()=>{setSessionCookie(null)}}/>
+      <Header handleSearch={handleSearch} isLoggedIn={isLoggedIn} logOut={()=>{setSessionCookie(null)}}/>
       <Routes>
         <Route path="/" element={<div/>}/>
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie}/>}/>
