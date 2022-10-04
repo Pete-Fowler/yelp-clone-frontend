@@ -22,7 +22,7 @@ function StarRating({ id, name, type, address, reviews, price, image_url }) {
 
     return (   
       
-      <div>{results}<button onClick={() => console.log(reviews)}></button></div>
+      <div>{results}</div>
       
     
       )
