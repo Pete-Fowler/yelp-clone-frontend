@@ -18,13 +18,8 @@ function App() {
   useEffect(() => { localStorage.setItem("userId", userId == null? "0" : JSON.stringify(userId));
   }, [userId]);
 
-
   const isLoggedIn = sessionCookie !== null
 
-  const [searchResults, setSearchResults ] = useState([]);
-  function handleSearch(data) {
-    setSearchResults(data);
-  }
 
   const [ratings, setRatings] = useState([])
   useEffect(() =>
@@ -36,7 +31,7 @@ function App() {
 
   return (
     <div className="App col">
-      <Header handleSearch={handleSearch} isLoggedIn={isLoggedIn} logOut={()=>{setSessionCookie(null)}}/>
+      <Header isLoggedIn={isLoggedIn} logOut={()=>{setSessionCookie(null)}}/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie} isLogin={true} setUserId={setUserId}/>}/>
@@ -44,7 +39,7 @@ function App() {
         <Route path="/businesses" element={<div/>}/>
 
         <Route path="/review/:bizId" element={<CreateReview userId={userId}/>}/>
-        <Route path="/search/:term" element={<SearchResults searchResults={searchResults}/>} />
+        <Route path="/search/:term" element={<SearchResults/>} />
         <Route path="/business/:id" element={<BusinessDetails isLoggedIn={isLoggedIn}/>} />
         <Route path="/starrating/" element={ratings.map(biz => <StarRating 
       key={biz.id} 
