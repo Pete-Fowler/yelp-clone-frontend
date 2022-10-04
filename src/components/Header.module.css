@@ -1,13 +1,27 @@
 
 .nav {
+  color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 130px;
   width: 100%;
   max-width: 1440px;
+  position: absolute;
+  z-index: 5;
 }
 
 .logo {
   height: 40px;
+}
+
+.headerBtn {
+  color: white;
+  font-weight: 900;
+  border: none;
+}
+
+.headerBtn:hover {
+  transition: .4s;
+  background: rgba(185, 185, 185, .6);
 }

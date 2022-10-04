@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../images/yelpLogo.svg';
+import logo from '../images/yelpLogoWhite.svg';
 import styles from './Header.module.css';
 import SearchBar from './SearchBar';
 import { Link, useNavigate } from "react-router-dom";
@@ -9,8 +9,8 @@ function Header({ isLoggedIn, logOut, handleSearch }) {
 
   let userArea = (
     <div className="row">
-      <button onClick={()=>{navigate("/login")}}>Log In</button>
-      <button className="red" onClick={()=>{navigate("/signup")}}>Sign Up</button>
+      <button className={styles.headerBtn} onClick={()=>{navigate("/login")}}>Log In</button>
+      <button className={styles.headerBtn} onClick={()=>{navigate("/signup")}}>Sign Up</button>
     </div>
   )
   if (isLoggedIn) {
