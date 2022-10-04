@@ -74,23 +74,23 @@ function CreateReview({userId}) {
   const starRatingPicker = [...Array(5)].map((star, index) => {
     index += 1;
     return (
+        <div className={style.star}>
       <button type="button" key={index}
-      className={index <= ((rating && hover) || hover ) ? "on" : "off"}
+      className={index <= ((rating && hover) || hover ) ? `${style.on}` : `${style.off}` }
       onClick={() => setRating(index)}
       onMouseEnter={() => setHover(index)}
       onMouseLeave={() => setHover(rating)}>
         <span>&#9733;</span>
       </button>
+      </div>
     );
   })
 
   return (
-    <form onSubmit={handleSubmit} className="form">
-      <p>{/*User.id*/}</p>
+    <form onSubmit={handleSubmit} className={style.form}>
       <h2>{bizName}</h2>
-      <p>Rating: {rating}</p>
-      <div className="star-rating"> {starRatingPicker} </div>
-      <input type="text" name="description" placeholder="description" onChange={handleCommentChange} />
+      <div className={style.rating}> {starRatingPicker} </div> <p className={style.hoverText}>{hoverRating()}</p>
+      <input type="text" onChange={handleCommentChange} className={style.textbox}/>
       <input type="submit" value="Add Review"  />
     </form>
     )

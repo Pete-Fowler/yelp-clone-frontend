@@ -14,15 +14,25 @@
   padding-right: 1rem;
 }
 
+hr {
+  width: 100%;
+  color: #ebebeb;
+}
+
+a {
+  color: rgba(2,122,151,1);
+  text-decoration: none;
+}
 
 #controls > button {
   margin: 0 4px;
   font-size: 16px;
+  padding: 8px 8px;
 }
 
 #page {
   margin-top: 24px;
-  padding: 0px 40px;
+  padding: 0px 20px;
 }
 #mainContent {
   flex: 1;
