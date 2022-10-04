@@ -28,7 +28,7 @@ export default function BusinessResult({ id, name, type, address, reviews, price
       </div>
       <div className={styles.commentBox}>
         <img className={styles.chatIcon} src={chat} alt='Chat bubble' style={{height: '15px'}} />
-        <div className={styles.comment}>"{comment}" <Link to={``}>more</Link></div>
+        <div className={styles.comment}>"{comment}" <Link to={`/business/${id}`}>more</Link></div>
       </div>
       <div>{address}</div>
     </div>
