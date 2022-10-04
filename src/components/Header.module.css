@@ -13,15 +13,20 @@
 
 .logo {
   height: 40px;
+  margin-left: 20px;
 }
 
-.headerBtn {
+
+button.headerBtn {
   color: white;
   font-weight: 900;
-  border: none;
+  margin-inline: 10px;
 }
 
-.headerBtn:hover {
-  transition: .4s;
-  background: rgba(185, 185, 185, .6);
+button.login {
+  border: 5px solid white;
+}
+
+.usedArea {
+  margin-right: 30px;
 }
