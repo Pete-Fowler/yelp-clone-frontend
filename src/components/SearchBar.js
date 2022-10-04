@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './SearchBar.module.css';
 import searchIcon from '../images/searchIcon.svg';
 
-export default function SearchBar ({ handleSearch }) {
+export default function SearchBar () {
   const [ searchTerm, setSearchTerm ] = useState("")
 
   const navigate = useNavigate();
