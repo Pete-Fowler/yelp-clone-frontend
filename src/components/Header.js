@@ -10,7 +10,7 @@ function Header({ isLoggedIn, logOut, handleSearch }) {
   let userArea = (
     <div className={"row " + styles.userArea}>
       <button className={'login ' + styles.headerBtn} onClick={()=>{navigate("/login")}}>Log In</button>
-      <button className={'red ' + styles.headerBtn} onClick={()=>{navigate("/signup")}}>Sign Up</button>
+      <button className={'red ' + styles.signUp + ' ' + styles.headerBtn} onClick={()=>{navigate("/signup")}}>Sign Up</button>
     </div>
   )
   if (isLoggedIn) {
