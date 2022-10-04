@@ -13,9 +13,12 @@ function App() {
   const [sessionCookie, setSessionCookie] = useState(JSON.parse(localStorage.getItem("sessionCookie")))
   useEffect(() => { localStorage.setItem("sessionCookie", JSON.stringify(sessionCookie));
   }, [sessionCookie]);
+  const [userId, setUserId] = useState(JSON.parse(localStorage.getItem("userId")))
+  useEffect(() => { localStorage.setItem("userId", userId == null? "0" : JSON.stringify(userId));
+  }, [userId]);
+
 
   const isLoggedIn = sessionCookie !== null
-  const [userId, setUserId] = useState(0)
 
   const [searchResults, setSearchResults ] = useState([]);
   function handleSearch(data) {
