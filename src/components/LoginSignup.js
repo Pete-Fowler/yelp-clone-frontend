@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function LoginSignup({setSessionCookie, isLogin}) {
+function LoginSignup({setSessionCookie, isLogin, setUserId}) {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
@@ -31,6 +31,7 @@ function LoginSignup({setSessionCookie, isLogin}) {
       } else {
         // send user back to home
         setSessionCookie(data["session_cookie"])
+        setUserId(data["id"])
         navigate("/")
       }
     })
