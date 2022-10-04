@@ -3,12 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import style from "./BusinessDetails.module.css"
 import CreateReview from "./CreateReview";
-import { dom } from "aria-query";
 
 function BusinessDetails({ setBizId, setBizName, bizName }) {
-  
   const [type, setType] = useState("")
   const [address, setAddress] = useState("")
+  const [imgUrl, setImgUrl] = useState("")
 
   const navigate = useNavigate()
   const { id } = useParams();
@@ -19,6 +18,7 @@ function BusinessDetails({ setBizId, setBizName, bizName }) {
       setBizName(data.name)
       setType(data.business_type)
       setAddress(data.address)
+      setImgUrl(data.image_url)
       setBizId(data.id)
     })
   }, [id])
@@ -27,10 +27,10 @@ function BusinessDetails({ setBizId, setBizName, bizName }) {
     navigate("/review")
   }
 
-  
+
   return (
     <div>
-      <div id={style.photoHeader}>
+      <div id={style.photoHeader} style={{ background: `url(${imgUrl})` }}>
         <div>
           <h1>{bizName}</h1>
           <span>{/* star rating */} {/* reviews */} reviews</span>
@@ -124,7 +124,7 @@ function BusinessDetails({ setBizId, setBizName, bizName }) {
       </div>
       <CreateReview style={{display: "none"}} id={id}/>
     </div>
-    
+
   )
 }
 
