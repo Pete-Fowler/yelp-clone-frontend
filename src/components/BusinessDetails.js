@@ -8,6 +8,8 @@ function BusinessDetails({ setBizId, setBizName, bizName }) {
   const [type, setType] = useState("")
   const [address, setAddress] = useState("")
   const [imgUrl, setImgUrl] = useState("")
+  const [price, setPrice] = useState("")
+  const [numReviews, setNumReviews] = useState(0)
 
   const navigate = useNavigate()
   const { id } = useParams();
@@ -20,6 +22,9 @@ function BusinessDetails({ setBizId, setBizName, bizName }) {
       setAddress(data.address)
       setImgUrl(data.image_url)
       setBizId(data.id)
+      setPrice(data.price)
+      setNumReviews(data.reviews.length)
+      console.log(data)
     })
   }, [id])
 
@@ -30,15 +35,11 @@ function BusinessDetails({ setBizId, setBizName, bizName }) {
 
   return (
     <div>
-      <div id={style.photoHeader} style={{ background: `url(${imgUrl})` }}>
-        <div>
+      <div id={style.photoHeader} style={{ background: `linear-gradient(to bottom, transparent, rgba(0,0,0,0.75)), url(${imgUrl})`, position:"relative"}}>
+        <div className="col" style={{bottom:0, left:0, position:"absolute"}}>
           <h1>{bizName}</h1>
-          <span>{/* star rating */} {/* reviews */} reviews</span>
-          <br/>
-          <span> {/* price */} • {type} </span>
-          <br/>
-          <span> {/* closed/open • hours */} </span>
-          <br/>
+          <span>{/* star rating */} {numReviews} reviews</span>
+          <span> {price} • {type} </span>
         </div>
       </div>
       <div className="row" id={style.page}>
@@ -60,19 +61,6 @@ function BusinessDetails({ setBizId, setBizName, bizName }) {
               <span role="img"><svg width="24" height="24" class="icon_svg"><path d="M19 22a.994.994 0 01-.581-.186L12 17.229l-6.419 4.585A1 1 0 014 21V5a3.003 3.003 0 013-3h10a3.003 3.003 0 013 3v16a1 1 0 01-1 1zm-7-7c.208 0 .412.065.581.187L18 19.056V5a1 1 0 00-1-1H7a1 1 0 00-1 1v14.057l5.419-3.87A.998.998 0 0112 15z"></path></svg></span>
               Save
             </button>
-          </div>
-          <div>
-            <h3>Menu</h3>
-            <h4>Popular dishes</h4>
-          </div>
-          <div>
-            <h3>Location & Hours</h3>
-          </div>
-          <div>
-            <h3>Amenities and More</h3>
-          </div>
-          <div>
-            <h3>About the Business</h3>
           </div>
           <div>
             <h3>Recommended Reviews</h3>
