@@ -32,7 +32,7 @@ function App() {
         <Route path="/review/:bizId" element={<CreateReview userId={userId}/>}/>
         <Route path="/search/:term" element={<SearchResults/>} />
         <Route path="/business/:id" element={<BusinessDetails isLoggedIn={isLoggedIn}/>} />
-        <Route path="/starrating/" element={<StarRating searchResults={searchResults}/>} />
+        <Route path="/starrating/" element={<StarRating />} />
       </Routes>
       <Footer/>
     </div>
