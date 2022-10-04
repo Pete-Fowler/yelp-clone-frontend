@@ -8,9 +8,9 @@ function Header({ isLoggedIn, logOut, handleSearch }) {
   const navigate = useNavigate()
 
   let userArea = (
-    <div className="row">
-      <button className={styles.headerBtn} onClick={()=>{navigate("/login")}}>Log In</button>
-      <button className={styles.headerBtn} onClick={()=>{navigate("/signup")}}>Sign Up</button>
+    <div className={"row " + styles.userArea}>
+      <button className={'login ' + styles.headerBtn} onClick={()=>{navigate("/login")}}>Log In</button>
+      <button className={'red ' + styles.headerBtn} onClick={()=>{navigate("/signup")}}>Sign Up</button>
     </div>
   )
   if (isLoggedIn) {
@@ -19,8 +19,8 @@ function Header({ isLoggedIn, logOut, handleSearch }) {
 
   return (
     <nav className={styles.nav}>
-      <Link to="/"><img className={styles.logo} src={logo} alt='Yelp logo' /></Link>
-      <SearchBar handleSearch={handleSearch}/>
+        <Link to="/"><img className={styles.logo} src={logo} alt='Yelp logo' /></Link>
+        <SearchBar handleSearch={handleSearch}/>
       {userArea}
     </nav>
   )
