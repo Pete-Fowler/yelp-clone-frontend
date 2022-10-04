@@ -19,7 +19,13 @@ function StarRating({ id, name, type, address, reviews, price, image_url }) {
    
 
     return (   
-   <div>{results}</div>
+    <div className={style.starsBox}>
+      <div className={style.starBox}>&#9734;</div>
+      <div className={style.starBox}>&#9734;</div>
+      <div className={style.starBox}>&#9734;</div>
+      <div className={style.starBox}>&#9734;</div>
+      <div className={style.starBox}>&#9734;</div>
+    </div>
     )
   
 }

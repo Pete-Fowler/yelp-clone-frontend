@@ -1,3 +1,16 @@
+
+.starsBox {
+  display: flex;
+  gap: 5px;
+}
+
+.starBox {
+  width: 25px;
+  height: 25px;
+  background-color: #6e7072;
+  border-radius: 3px;
+}
+
 .star {
     background-color: transparent;
     display: flex;
