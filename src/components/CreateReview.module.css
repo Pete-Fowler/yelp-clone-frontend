@@ -1,9 +1,7 @@
 .form {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
     width: 50rem;
+    margin-top: 1rem;
+    margin-left: 20rem;
 }
 
 .star {
@@ -13,6 +11,7 @@
     border: none;
     outline: none;
     cursor: pointer;
+    margin-top: 1rem;
   }
 
 .on {
@@ -29,8 +28,6 @@
     align-self: center; 
     margin: 0px auto;
     position: absolute;
-    margin-top: 8rem;
-    margin-left: -25rem;
    }
 
 .textbox {
@@ -40,9 +37,14 @@
 }
 
 .hoverText {
+    margin-left: 15rem;
     padding: 5px;
 }
 
 .submitButton {
     width: 10em;
+}
+
+.footer {
+    margin-bottom: 20rem;
 }
