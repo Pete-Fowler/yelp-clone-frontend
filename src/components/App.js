@@ -13,14 +13,14 @@ function App() {
   const [sessionCookie, setSessionCookie] = useState(JSON.parse(localStorage.getItem("sessionCookie")))
   useEffect(() => { localStorage.setItem("sessionCookie", JSON.stringify(sessionCookie));
   }, [sessionCookie]);
-  
+
   const isLoggedIn = sessionCookie !== null
 
   const [reviews, setReviews] = useState([])
   const [bizName, setBizName] = useState("")
   const [searchResults, setSearchResults ] = useState([]);
   const [bizId, setBizId] = useState(0)
-  
+
 
   useEffect(() => {
     fetch("http://localhost:9292/")
@@ -42,9 +42,10 @@ function handleSearch(data) {
       <Header handleSearch={handleSearch} isLoggedIn={isLoggedIn} logOut={()=>{setSessionCookie(null)}}/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie}/>}/>
+        <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie} isLogin={true}/>}/>
+        <Route path="/signup" element={<LoginSignup setSessionCookie={setSessionCookie} isLogin={false}/>}/>
         <Route path="/businesses" element={<div/>}/>
-       
+
         <Route path="/review" element={<CreateReview  addReview={addReview} bizId={bizId} bizName={bizName}/>}/>
         <Route path="/search" element={<SearchResults searchResults={searchResults}/>} />
         <Route path="/business/:id" element={<BusinessDetails setBizId={setBizId} setBizName={setBizName} bizName={bizName}/>} />
