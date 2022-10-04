@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import chat from '../images/chatBubble.svg';
 import styles from './BusinessResult.module.css';
 
 export default function BusinessResult({ id, name, type, address, reviews, price, image_url }) {
@@ -25,7 +26,10 @@ export default function BusinessResult({ id, name, type, address, reviews, price
         <span className={styles.type}>{type} </span>
         <span className={styles.price}>{price}</span>
       </div>
-      <div className={styles.comment}>"{comment}" <Link to={``}>more</Link></div>
+      <div className={styles.commentBox}>
+        <img className={styles.chatIcon} src={chat} alt='Chat bubble' style={{height: '15px'}} />
+        <div className={styles.comment}>"{comment}" <Link to={`/business/${id}`}>more</Link></div>
+      </div>
       <div>{address}</div>
     </div>
   </div>

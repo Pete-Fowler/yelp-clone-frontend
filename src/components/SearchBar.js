@@ -18,7 +18,7 @@ export default function SearchBar ({ handleSearch }) {
     .then(res => res.json())
     .then(data => {
       handleSearch(data);
-      navigate('/search');
+      navigate(`/search/${searchTerm}`);
     });
   }
 

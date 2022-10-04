@@ -51,4 +51,14 @@
   margin-left: 10px;
 }
 
+.commentBox {
+  display: flex;
+  gap: 10px;
+}
+
+.chatIcon {
+  position: relative;
+  top: 3px;
+}
+
 
