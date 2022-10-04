@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import style from './StarRating.module.css';
 
-function StarRating({ setStars }) {
-    const [rating, setRating] = useState(0)
-    const [hover, setHover] = useState(0)
-
-    return (
-        /*
+function StarRating() {
+/*
+    const starAverage = 0
+    
         const displayStars = Array.from(String(starAverage), Number);
 
         const results = displayStars.map((star) => {
@@ -14,11 +12,16 @@ function StarRating({ setStars }) {
         })
 
     
-    )
-    */
+   
+
+    return (
+        
    <div></div>
    
     )
+    */
+
+    return (<div></div>)
 }
 
 export default StarRating;

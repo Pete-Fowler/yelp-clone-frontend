@@ -8,14 +8,18 @@ import CreateReview from './CreateReview';
 import SearchResults from './SearchResults';
 import Footer from './footer';
 import Home from './Home';
+import StarRating from './StarRating';
 
 function App() {
   const [sessionCookie, setSessionCookie] = useState(JSON.parse(localStorage.getItem("sessionCookie")))
   useEffect(() => { localStorage.setItem("sessionCookie", JSON.stringify(sessionCookie));
   }, [sessionCookie]);
+  const [userId, setUserId] = useState(JSON.parse(localStorage.getItem("userId")))
+  useEffect(() => { localStorage.setItem("userId", userId == null? "0" : JSON.stringify(userId));
+  }, [userId]);
+
 
   const isLoggedIn = sessionCookie !== null
-  const [userId, setUserId] = useState(0)
 
   const [searchResults, setSearchResults ] = useState([]);
   function handleSearch(data) {
@@ -34,6 +38,7 @@ function App() {
         <Route path="/review/:bizId" element={<CreateReview userId={userId}/>}/>
         <Route path="/search/:term" element={<SearchResults searchResults={searchResults}/>} />
         <Route path="/business/:id" element={<BusinessDetails isLoggedIn={isLoggedIn}/>} />
+        <Route path="/starrating/" element={<StarRating searchResults={searchResults}/>} />
       </Routes>
       <Footer/>
     </div>
