@@ -1,24 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './StarRating.module.css';
 
-function StarRating({ setStars }) {
-    const [rating, setRating] = useState(0)
-    const [hover, setHover] = useState(0)
+function StarRating({ id, name, type, address, reviews, price, image_url }) {
 
-    return (
-        /*
-        const displayStars = Array.from(String(starAverage), Number);
+  const starTotal = reviews.reduce((last, current) => {
+    return last + current.star_rating;
+  }, reviews[0].star_rating);
 
-        const results = displayStars.map((star) => {
-          return <span className='star-average'>&#9733;</span>
-        })
+  const starAverage = Math.round(starTotal / reviews.length * 10) / 10;
+    
+  const displayStars = Array.from(String(starAverage), Number);
+
+  const results = displayStars.map((star) => {
+    return <span className='star-average'>&#9733;</span>
+  })
 
     
-    )
-    */
-   <div></div>
    
+
+    return (   
+   <div>{results}</div>
     )
+  
 }
 
 export default StarRating;
