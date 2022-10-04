@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import StarRating from "./StarRating"
-import "../CreateReview.css"
+import style from "./CreateReview.module.css"
 
 function CreateReview({ addReview, bizId, bizName }) {
     const [rating, setRating] = useState(0)
@@ -12,6 +12,27 @@ function CreateReview({ addReview, bizId, bizName }) {
 
     function handleCommentChange(event) {
         setComment(event.target.value)
+    }
+
+    function hoverRating() {
+        if (hover == 0) {
+            return "Select your rating"
+        }
+        else if (hover == 1) {
+            return "Not good"
+        }
+        else if (hover == 2) {
+            return "Could've been better"
+        }
+        else if (hover == 3) {
+            return "OK"
+        }
+        else if (hover == 4) {
+            return "Good"
+        }
+        else if (hover == 5) {
+            return "Great"
+        }
     }
 
 
@@ -38,19 +59,18 @@ function CreateReview({ addReview, bizId, bizName }) {
   }
 
     return (
-        <form onSubmit={handleSubmit} className="form">
+        <form onSubmit={handleSubmit} className={style.form}>
             <p>{/*User.id*/}</p>
             <h2>{bizName}</h2>
-            <p>Rating: {rating}</p>
-            <div className="star-rating" >
+            <div className={style.rating} >
                 {[...Array(5)].map((star, index) => {
                     index += 1;        
                     return (
                         <button
                         type="button"
                         key={index}
-                        className={index <= ((rating && hover) || hover ) ? "on" : "off"}
-                        onClick={() => setRating(index) && setStars(index)}
+                        className={index <= ((rating && hover) || hover ) ? `${style.on}` : `${style.off}`}
+                        onClick={() => setRating(index)}
                         onMouseEnter={() => setHover(index)}
                         onMouseLeave={() => setHover(rating)}
                         >    
@@ -58,9 +78,10 @@ function CreateReview({ addReview, bizId, bizName }) {
                     </button>             
                     );
                 })}
+                <p className={style.hoverText}>{hoverRating()}</p>
             </div>
-            <input type="text" name="description" placeholder="description" onChange={handleCommentChange} />
-            <input type="submit" value="Add Review"  />
+            <input type="textbox" className={style.textbox} name="description" placeholder="description" onChange={handleCommentChange} />
+            <input type="submit" value="Post Review"  className="submitButton"/>
    
         </form>
     )

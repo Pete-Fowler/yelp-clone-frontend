@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import '../App.css';
 import BusinessDetails from './BusinessDetails';
@@ -17,7 +17,7 @@ function App() {
   const isLoggedIn = sessionCookie !== null
 
   const [reviews, setReviews] = useState([])
-  const [bizName, setBizName] = useState("")
+  const [bizName, setBizName] = useState("Denver Biscuit Company")
   const [searchResults, setSearchResults ] = useState([]);
   const [bizId, setBizId] = useState(0)
   

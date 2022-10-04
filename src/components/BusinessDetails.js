@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import style from "./BusinessDetails.module.css"
@@ -25,6 +25,7 @@ function BusinessDetails({ setBizId, setBizName, bizName }) {
 
   function handleReview() {
     navigate("/review")
+    
   }
 
   
@@ -122,7 +123,6 @@ function BusinessDetails({ setBizId, setBizName, bizName }) {
           </div>
         </div>
       </div>
-      <CreateReview style={{display: "none"}} id={id}/>
     </div>
     
   )

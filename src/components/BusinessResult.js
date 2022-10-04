@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { array } from 'yargs';
 import styles from './BusinessResult.module.css';
 
 export default function BusinessResult({ id, name, type, address, reviews, price, image_url }) {
@@ -10,13 +11,19 @@ export default function BusinessResult({ id, name, type, address, reviews, price
 
   const starAverage = starTotal / reviews.length;
 
+  const displayStars = Array.from(String(starAverage), Number);
+
+  const results = displayStars.map((star) => {
+    return <span className='star-average'>&#9733;</span>
+  })
+
   const comment = reviews[0].comment
 
   return <div className={styles.listing}>
     <img className={styles.img} src={image_url} alt='Restaurant or food' />
     <div className={styles.content}>
       <Link className={styles.link} to={`/business/${id}`}> {name}</Link>
-      <div>{starAverage} Stars ({reviews.length} reviews)</div>
+      <div>{results} ({reviews.length} reviews)</div>
       <div>
         <span className={styles.type}>{type} </span>
         <span className={styles.price}>{price}</span>

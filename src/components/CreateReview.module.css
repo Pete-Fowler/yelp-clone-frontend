@@ -1,0 +1,48 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50rem;
+}
+
+.star {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+.on {
+    color: #000;
+  }
+
+.off {
+    color: #ccc;
+  }
+
+ .rating { 
+    display: flex; 
+    flex-direction: row;
+    align-self: center; 
+    margin: 0px auto;
+    position: absolute;
+    margin-top: 8rem;
+    margin-left: -25rem;
+   }
+
+.textbox {
+    width: 50em;
+    height: 25em;
+    
+}
+
+.hoverText {
+    padding: 5px;
+}
+
+.submitButton {
+    width: 10em;
+}

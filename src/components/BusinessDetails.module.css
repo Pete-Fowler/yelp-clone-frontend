@@ -22,3 +22,7 @@
 #mainContent {
   flex: 1;
 }
+
+.component {
+  display: none;
+}
