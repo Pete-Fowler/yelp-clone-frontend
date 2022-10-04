@@ -1,3 +1,5 @@
+import React from "react"
+
 function Review({review:{comment, star_rating, user}}) {
   console.log(user)
   const {username, profile_picture} = user

@@ -1,0 +1,33 @@
+.star {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .star-rating {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+.on {
+    color: #000;
+  }
+
+.off {
+    color: #ccc;
+  }
+
+ .rating { 
+    display: flex; 
+    flex-direction: row;
+    align-self: center; 
+    margin: 0px auto; 
+   }
+ 

@@ -1,28 +1,23 @@
 import React, { useState } from 'react'
-import "../StarRating.css";
+import style from './StarRating.module.css';
 
 function StarRating({ setStars }) {
     const [rating, setRating] = useState(0)
     const [hover, setHover] = useState(0)
 
     return (
-    <div className="star-rating" >
-        {[...Array(5)].map((star, index) => {
-            index += 1;        
-            return (
-                <button
-                type="button"
-                key={index}
-                className={index <= ((rating && hover) || hover ) ? "on" : "off"}
-                onClick={() => setRating(index) && setStars(index)}
-                onMouseEnter={() => setHover(index)}
-                onMouseLeave={() => setHover(rating)}
-                >    
-            <span>&#9733;</span>
-            </button>             
-            );
-        })}
-    </div>
+        /*
+        const displayStars = Array.from(String(starAverage), Number);
+
+        const results = displayStars.map((star) => {
+          return <span className='star-average'>&#9733;</span>
+        })
+
+    
+    )
+    */
+   <div></div>
+   
     )
 }
 

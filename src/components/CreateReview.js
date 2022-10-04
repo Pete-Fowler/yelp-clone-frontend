@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import StarRating from "./StarRating"
-import "../CreateReview.css"
+import style from "./CreateReview.module.css"
 import { useNavigate, useParams } from "react-router-dom";
 
 function CreateReview({userId}) {
@@ -24,15 +24,39 @@ function CreateReview({userId}) {
     setComment(event.target.value)
   }
 
-  function handleSubmit(event) {
-    event.preventDefault()
+  
 
-    const newReview = {
-      "user_id": userId,
-      "business_id": bizId,
-      "comment": comment,
-      "star_rating": rating,
+    function hoverRating() {
+        if (hover == 0) {
+            return "Select your rating"
+        }
+        else if (hover == 1) {
+            return "Not good"
+        }
+        else if (hover == 2) {
+            return "Could've been better"
+        }
+        else if (hover == 3) {
+            return "OK"
+        }
+        else if (hover == 4) {
+            return "Good"
+        }
+        else if (hover == 5) {
+            return "Great"
+        }
     }
+
+
+    function handleSubmit(event) {
+        event.preventDefault()
+
+        const newReview = {
+            "user_id": userId,
+            "business_id": bizId,
+            "comment": comment,
+            "star_rating": rating,
+        }
 
     fetch("http://localhost:9292/review/", {
       method: "POST",
@@ -69,7 +93,8 @@ function CreateReview({userId}) {
       <input type="text" name="description" placeholder="description" onChange={handleCommentChange} />
       <input type="submit" value="Add Review"  />
     </form>
-  )
+    )
 }
+
 
 export default CreateReview;
