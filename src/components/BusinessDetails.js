@@ -2,52 +2,50 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import style from "./BusinessDetails.module.css"
-import CreateReview from "./CreateReview";
-import { dom } from "aria-query";
+import Review from "./Review";
 
-function BusinessDetails({ setBizId, setBizName, bizName }) {
-  
+function BusinessDetails({isLoggedIn}) {
+  const [name, setName] = useState("")
   const [type, setType] = useState("")
   const [address, setAddress] = useState("")
+  const [imgUrl, setImgUrl] = useState("")
+  const [price, setPrice] = useState("")
+  const [reviews, setReviews] = useState([])
 
   const navigate = useNavigate()
   const { id } = useParams();
 
   useEffect(() => {
+    console.log(id)
     fetch(`http://localhost:9292/business/${id}`)
     .then(r=>r.json()).then((data)=>{
-      setBizName(data.name)
+      console.log(data)
+      setName(data.name)
       setType(data.business_type)
       setAddress(data.address)
-      setBizId(data.id)
+      setImgUrl(data.image_url)
+      setPrice(data.price)
+      setReviews(data.reviews)
     })
   }, [id])
 
-  function handleReview() {
-    navigate("/review")
-    
-  }
+  const reviewNodes = reviews.map(review=>(<Review review={review} key={review.id}/>))
 
-  
   return (
     <div>
-      <div id={style.photoHeader}>
-        <div>
-          <h1>{bizName}</h1>
-          <span>{/* star rating */} {/* reviews */} reviews</span>
-          <br/>
-          <span> {/* price */} • {type} </span>
-          <br/>
-          <span> {/* closed/open • hours */} </span>
-          <br/>
+      <div id={style.photoHeader} style={{ background: `linear-gradient(to bottom, transparent, rgba(0,0,0,0.75)), url(${imgUrl})`, position:"relative"}}>
+        <div className="col" style={{bottom:0, left:0, position:"absolute"}}>
+          <h1>{name}</h1>
+          <span>{/* star rating */} {reviews.length} reviews</span>
+          <span> {price} • {type} </span>
         </div>
       </div>
       <div className="row" id={style.page}>
         <div className="col" id={style.mainContent}>
           <div className="row" id={style.controls}>
-            <button className="red" onClick={handleReview}>
+            <button className="red" onClick={()=>{isLoggedIn? navigate(`/review/${id}`): navigate(`/login`)}}>
               <span role="img"><svg width="24" height="24" class="icon_svg"><path d="M17.87 22a.93.93 0 01-.46-.12L12 19.08l-5.41 2.84a1 1 0 01-1-.08 1 1 0 01-.4-1l1-6-4.39-4.26a1 1 0 01.56-1.7L8.4 8l2.7-5.48a1 1 0 011.8 0L15.6 8l6 .88a1 1 0 01.56 1.7l-4.38 4.27 1 6a1 1 0 01-1 1.17l.09-.02zM12 17c.163.002.323.04.47.11l4.07 2.15-.78-4.54a1 1 0 01.29-.89l3.3-3.21-4.56-.72a1 1 0 01-.79-.54l-2-4.14-2 4.14a1 1 0 01-.75.54l-4.56.67L8 13.78a1 1 0 01.29.89l-.78 4.54 4.07-2.15A1.12 1.12 0 0112 17z"></path></svg></span>
-              Write a review
+              {isLoggedIn? "Write a review" : "Log In to write a review"}
             </button>
             <button>
               <span role="img"><svg width="24" height="24" class="icon_svg"><path d="M16 2a1 1 0 01.95.68L17.72 5H20a3 3 0 013 3v11a3 3 0 01-3 3H4a3 3 0 01-3-3V8a3 3 0 013-3h2.28l.77-2.32A1 1 0 018 2h8zm-.72 2H8.72L8 6.32A1 1 0 017 7H4a1 1 0 00-1 1v11a1 1 0 001 1h16a1 1 0 001-1V8a1 1 0 00-1-1h-3a1 1 0 01-.95-.68L15.28 4zM12 7.5a5.5 5.5 0 015.5 5.5 5.51 5.51 0 01-5.5 5.5 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"></path></svg></span>
@@ -63,25 +61,8 @@ function BusinessDetails({ setBizId, setBizName, bizName }) {
             </button>
           </div>
           <div>
-            <h3>Menu</h3>
-            <h4>Popular dishes</h4>
-          </div>
-          <div>
-            <h3>Location & Hours</h3>
-          </div>
-          <div>
-            <h3>Amenities and More</h3>
-          </div>
-          <div>
-            <h3>About the Business</h3>
-          </div>
-          <div>
             <h3>Recommended Reviews</h3>
-            <h4>Start your review of {bizName}</h4>
-            <button className="red" onClick={handleReview}>
-              <span role="img"><svg width="24" height="24" class="icon_svg"><path d="M17.87 22a.93.93 0 01-.46-.12L12 19.08l-5.41 2.84a1 1 0 01-1-.08 1 1 0 01-.4-1l1-6-4.39-4.26a1 1 0 01.56-1.7L8.4 8l2.7-5.48a1 1 0 011.8 0L15.6 8l6 .88a1 1 0 01.56 1.7l-4.38 4.27 1 6a1 1 0 01-1 1.17l.09-.02zM12 17c.163.002.323.04.47.11l4.07 2.15-.78-4.54a1 1 0 01.29-.89l3.3-3.21-4.56-.72a1 1 0 01-.79-.54l-2-4.14-2 4.14a1 1 0 01-.75.54l-4.56.67L8 13.78a1 1 0 01.29.89l-.78 4.54 4.07-2.15A1.12 1.12 0 0112 17z"></path></svg></span>
-              Write a review
-            </button>
+            {reviewNodes}
           </div>
         </div>
         <div className="col">
@@ -124,7 +105,7 @@ function BusinessDetails({ setBizId, setBizName, bizName }) {
         </div>
       </div>
     </div>
-    
+
   )
 }
 

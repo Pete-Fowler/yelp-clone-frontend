@@ -1,6 +1,7 @@
 #photoHeader {
   height: 426px;
   background-color: black;
+  background-size: cover!important;
 }
 #photoHeader > div {
   color: white;
@@ -9,6 +10,10 @@
 #photoHeader > div > h1 {
   font-size: 48px;
 }
+#mainContent {
+  padding-right: 1rem;
+}
+
 
 #controls > button {
   margin: 0 4px;

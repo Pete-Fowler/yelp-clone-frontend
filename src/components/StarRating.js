@@ -6,25 +6,18 @@ function StarRating({ setStars }) {
     const [hover, setHover] = useState(0)
 
     return (
-    <div className={style.rating}>
-        {[...Array(5)].map((star, index) => {
-            index += 1;        
-            return (
-                <div className={style.star}>
-                <button
-                type="button"
-                key={index}
-                className={index <= ((rating && hover) || hover ) ? `${style.on}` : `${style.off}`}
-                onClick={() => setRating(index) && setStars(index)}
-                onMouseEnter={() => setHover(index)}
-                onMouseLeave={() => setHover(rating)}
-                >    
-            <span>&#9733;</span>
-            </button>
-            </div>             
-            );
-        })}
-    </div>
+        /*
+        const displayStars = Array.from(String(starAverage), Number);
+
+        const results = displayStars.map((star) => {
+          return <span className='star-average'>&#9733;</span>
+        })
+
+    
+    )
+    */
+   <div></div>
+   
     )
 }
 

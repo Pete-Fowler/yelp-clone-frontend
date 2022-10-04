@@ -13,41 +13,27 @@ function App() {
   const [sessionCookie, setSessionCookie] = useState(JSON.parse(localStorage.getItem("sessionCookie")))
   useEffect(() => { localStorage.setItem("sessionCookie", JSON.stringify(sessionCookie));
   }, [sessionCookie]);
-  
+
   const isLoggedIn = sessionCookie !== null
+  const [userId, setUserId] = useState(0)
 
-  const [reviews, setReviews] = useState([])
-  const [bizName, setBizName] = useState("Denver Biscuit Company")
   const [searchResults, setSearchResults ] = useState([]);
-  const [bizId, setBizId] = useState(0)
-  
-
-  useEffect(() => {
-    fetch("http://localhost:9292/")
-    .then((response) => response.json())
-    .then((data) => setReviews(data));
-  }, []);
-
-  function addReview(newReview) {
-    setReviews([...reviews, newReview])
+  function handleSearch(data) {
+    setSearchResults(data);
   }
-
-function handleSearch(data) {
-  setSearchResults(data);
-}
-
 
   return (
     <div className="App col">
       <Header handleSearch={handleSearch} isLoggedIn={isLoggedIn} logOut={()=>{setSessionCookie(null)}}/>
       <Routes>
         <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie}/>}/>
+        <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie} isLogin={true} setUserId={setUserId}/>}/>
+        <Route path="/signup" element={<LoginSignup setSessionCookie={setSessionCookie} isLogin={false} setUserId={setUserId}/>}/>
         <Route path="/businesses" element={<div/>}/>
-       
-        <Route path="/review" element={<CreateReview  addReview={addReview} bizId={bizId} bizName={bizName}/>}/>
-        <Route path="/search" element={<SearchResults searchResults={searchResults}/>} />
-        <Route path="/business/:id" element={<BusinessDetails setBizId={setBizId} setBizName={setBizName} bizName={bizName}/>} />
+
+        <Route path="/review/:bizId" element={<CreateReview userId={userId}/>}/>
+        <Route path="/search/:term" element={<SearchResults searchResults={searchResults}/>} />
+        <Route path="/business/:id" element={<BusinessDetails isLoggedIn={isLoggedIn}/>} />
       </Routes>
       <Footer/>
     </div>
