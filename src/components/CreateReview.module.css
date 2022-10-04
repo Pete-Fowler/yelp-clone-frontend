@@ -23,10 +23,10 @@
     color: #ccc;
   }
 
- .rating { 
-    display: flex; 
+ .rating {
+    display: flex;
     flex-direction: row;
-    align-self: center; 
+    align-self: center;
     margin: 0px auto;
     position: absolute;
     margin-top: 8rem;
@@ -36,7 +36,7 @@
 .textbox {
     width: 50em;
     height: 25em;
-    
+
 }
 
 .hoverText {
