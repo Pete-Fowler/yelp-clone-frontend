@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import style from "./BusinessDetails.module.css"
 import Review from "./Review";
+import StarRating from "./StarRating";
 
 function BusinessDetails({isLoggedIn}) {
   const [name, setName] = useState("")
@@ -40,7 +41,7 @@ function BusinessDetails({isLoggedIn}) {
       <div id={style.photoHeader} style={{ background: `linear-gradient(to bottom, transparent, rgba(0,0,0,0.75)), url(${imgUrl})`, position:"relative"}}>
         <div className="col" style={{bottom:0, left:0, position:"absolute"}}>
           <h1>{name}</h1>
-          <span>{/* star rating */} {reviews.length} reviews</span>
+          <span>{<StarRating reviews={reviews} />} {reviews.length} reviews</span>
           <span> {price} • {type} </span>
         </div>
       </div>
