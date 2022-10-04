@@ -8,6 +8,8 @@
 /* global vars */
 body {
   --red: #e00707;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* general stuff */
