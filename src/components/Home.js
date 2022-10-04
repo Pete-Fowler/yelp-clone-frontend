@@ -4,6 +4,7 @@ import style from './Home.module.css';
 function Home() {
   return (
     <div className="col" style={{ textAlign: "center" }}>
+      <div className={style.heroBox} />
       <h2 style={{fontSize:"28px", fontWeight:"700", lineHeight:"36px", color:"rgba(45,46,47,1)", marginBottom:"0px"}}>Categories</h2>
       <div className="col">
         <div className="row">
