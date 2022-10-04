@@ -6,9 +6,26 @@
   align-items: center;
   height: 130px;
   width: 100%;
-  max-width: 1440px;
-  position: absolute;
   z-index: 5;
+  padding: 0px;
+  margin: 0px;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.sticky {
+  position: sticky;
+  background-color: #fff;
+  top: 0px;
+  border-bottom: 1px solid gray;
+}
+
+.stickyBtn {
+  color: black;
+  font-weight: 600;
+  margin-inline: 10px;
 }
 
 .logo {
@@ -19,7 +36,7 @@
 
 button.headerBtn {
   color: white;
-  font-weight: 900;
+  font-weight: 600;
   margin-inline: 10px;
 }
 

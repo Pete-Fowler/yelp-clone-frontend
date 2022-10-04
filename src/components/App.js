@@ -42,15 +42,15 @@ function App() {
         <Route path="/search/:term" element={<SearchResults/>} />
         <Route path="/business/:id" element={<BusinessDetails isLoggedIn={isLoggedIn}/>} />
         <Route path="/starrating/" element={ratings.map(biz => <StarRating 
-      key={biz.id} 
-      id={biz.id} 
-      name={biz.name} 
-      type={biz.business_type}
-      address={biz.address}
-      reviews={biz.reviews}
-      price={biz.price}
-      image_url={biz.image_url}
-    />)} />
+          key={biz.id} 
+          id={biz.id} 
+          name={biz.name} 
+          type={biz.business_type}
+          address={biz.address}
+          reviews={biz.reviews}
+          price={biz.price}
+          image_url={biz.image_url}
+        />)} />
       </Routes>
       <Footer/>
     </div>
