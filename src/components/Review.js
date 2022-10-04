@@ -6,10 +6,10 @@ function Review({review:{comment, star_rating, user}}) {
   return (
     <div className="col" style={{margin:"1rem 0rem"}}>
       <div className="row">
-        <img style={{borderRadius:"50%", width:"5rem"}}  src={profile_picture} alt={`${username}'s icon`}/>
-        <span style={{fontSize:"1.5rem"}}>{username}</span>
+        <img style={{borderRadius:"50%", width:"4rem", height:"4rem", marginRight:"0.5rem", marginBottom:"0.5rem"}}  src={profile_picture} alt={`${username}'s icon`}/>
+        <span style={{fontSize:"1.25rem"}}>{username}</span>
+        {/* add star rating component here */}
       </div>
-      {/* add star rating component here */}
       <span>{comment}</span>
     </div>
   )

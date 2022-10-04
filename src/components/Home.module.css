@@ -1,3 +1,7 @@
+#home {
+  margin-top: 30px;
+}
+
 .category {
   display: flex;
   flex-direction: column;
@@ -12,4 +16,15 @@
 .category:hover {
   background-color: transparent;
   box-shadow: 0 0 10px 0 #00000026;
+}
+
+.heroBox {
+  position: relative;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://source.unsplash.com/1600x900/?store');
+  background-size: cover;
+  margin-bottom: 50px;
+  z-index: -5;
 }
