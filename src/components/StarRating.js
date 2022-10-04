@@ -15,11 +15,12 @@ function StarRating({ id, name, type, address, reviews, price, image_url }) {
     return <span className='star-average'>&#9733;</span>
   })
 
-    
+  const percent = starAverage /5 * 100
    
+  const gradient = {background: `linear-gradient(90deg, #ff643d, #ff643d ${percent}%, #bbbac0 ${percent}%)`};
 
     return (   
-    <div className={style.starsBox}>
+    <div className={style.starsBox} style={gradient} >
       <div className={style.starBox}>★</div>
       <div className={style.starBox}>★</div>
       <div className={style.starBox}>★</div>

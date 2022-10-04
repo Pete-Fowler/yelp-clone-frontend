@@ -1,7 +1,11 @@
 
 .starsBox {
+  position: relative;
   display: flex;
+  width: fit-content;
   gap: 2px;
+  z-index: 0;
+  mask-clip: ;
 }
 
 .starBox {
@@ -10,11 +14,13 @@
   line-height: 20px;
   color: white;
   font-size: 1rem;
-  background-color: #bbbac0;
-  border-radius: 3px;
+  border-radius: 5px;
   position: relative;
+  z-index: 5;
   text-align: center;
 }
+
+
 
 .star {
     background-color: transparent;
