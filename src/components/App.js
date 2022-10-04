@@ -48,7 +48,7 @@ function handleSearch(data) {
 
         <Route path="/review" element={<CreateReview addReview={addReview} bizId={bizId} bizName={bizName}/>}/>
         <Route path="/search/:term" element={<SearchResults searchResults={searchResults}/>} />
-        <Route path="/business/:id" element={<BusinessDetails />} />
+        <Route path="/business/:id" element={<BusinessDetails setBizId={setBizId} setBizName={setBizName} bizName={setBizName}/>} />
       </Routes>
       <Footer/>
     </div>
