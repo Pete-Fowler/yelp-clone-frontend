@@ -13,14 +13,13 @@
   padding: 0px;
 }
 
-
 .rating {
   display: flex;
   position: absolute;
   width: fit-content;
   z-index: 0;
-  top: 4.75rem;
-  left: .25rem;
+  top: 20px;
+  left: 20px;
 }
 
 .textbox {
