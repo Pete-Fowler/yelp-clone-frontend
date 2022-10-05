@@ -14,7 +14,7 @@ function Home() {
       <div className={style.heroBox} />
       <h2 style={{fontSize:"28px", fontWeight:"700", lineHeight:"36px", color:"rgba(45,46,47,1)", marginBottom:"0px"}}>Categories</h2>
       <div className="col">
-        <div className="row">
+        <div className="row centered">
           <button className={style.category} onClick={randomSearch}>
             <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_design_cdn/8bc05b287157/assets/img/svg_illustrations/40x40_food_v2.svg" />
             Restaurants
@@ -32,7 +32,7 @@ function Home() {
             Active Life
           </button>
         </div>
-        <div className="row">
+        <div className="row centered">
           <button className={style.category} onClick={randomSearch}>
             <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_design_cdn/5bd5d2648742/assets/img/svg_illustrations/40x40_barbers_v2.svg" />
             Beauty and Spas
