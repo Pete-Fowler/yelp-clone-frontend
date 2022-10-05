@@ -4,10 +4,10 @@ import style from "./CreateReview.module.css"
 import { useNavigate, useParams } from "react-router-dom";
 
 function CreateReview({ userId, sessionCookie }) {
-  const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
   const [bizName, setBizName] = useState("");
   const [color, setColor] = useState('#FFD56A');
+  const [rating, setRating] = useState(0);
 
   const { bizId } = useParams();
 
