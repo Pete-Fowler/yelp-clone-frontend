@@ -8,14 +8,7 @@ import StarRating from "./StarRating";
 // I think star rating is failing here because it's trying to render right when the state is being set and it is not yet really set. All this state can probably cause unnecessary rerenders, and it should be combined into one state, details, that has properties like details.imgUrl. The state could then move up one component or the fetch could be moved to the previous component where the link is to avoid this problem? Do not edit the starAverage in StarRating as someone did before, or it breaks it from working in the BusinessResult component
 
 function BusinessDetails({isLoggedIn}) {
-  const [name, setName] = useState("")
-  const [type, setType] = useState("")
-  const [address, setAddress] = useState("")
-  const [imgUrl, setImgUrl] = useState("")
-  const [price, setPrice] = useState("")
-  const [reviews, setReviews] = useState([])
-  const [phoneNumber, setPhoneNumber] = useState("")
-  const [website, setWebsite] = useState("")
+  const [bizObject, setBizObject] = useState({reviews:[], })
 
   const navigate = useNavigate()
   const { id } = useParams();
@@ -24,27 +17,19 @@ function BusinessDetails({isLoggedIn}) {
     console.log(id)
     fetch(`http://localhost:9292/business/${id}`)
     .then(r=>r.json()).then((data)=>{
-      console.log('data', data)
-      setName(data.name)
-      setType(data.business_type)
-      setAddress(data.address)
-      setImgUrl(data.image_url)
-      setPrice(data.price)
-      setReviews(data.reviews)
-      setPhoneNumber(data.phone_number)
-      setWebsite(data.website)
+      setBizObject(data)
     })
   }, [id])
 
-  const reviewNodes = reviews.map(review=>(<Review review={review} key={review.id}/>))
+  const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id}/>))
 
   return (
     <div>
-      <div id={style.photoHeader} style={{ background: `linear-gradient(to bottom, transparent, rgba(0,0,0,0.75)), url(${imgUrl})`, position:"relative"}}>
+      <div id={style.photoHeader} style={{ background: `linear-gradient(to bottom, transparent, rgba(0,0,0,0.75)), url(${bizObject.image_url})`, position:"relative"}}>
         <div className="col" style={{bottom:0, left:0, position:"absolute"}}>
-          <h1>{name}</h1>
-          {/* <span>{<StarRating reviews={reviews} />} {reviews.length} reviews</span> */}
-          <span> {price} • {type} </span>
+          <h1>{bizObject.name}</h1>
+          <span>{/*<StarRating reviews={reviews} />*/} {bizObject.reviews.length} reviews</span>
+          <span> {bizObject.price} • {bizObject.business_type} </span>
         </div>
       </div>
       <div className="row" id={style.page}>
@@ -92,13 +77,13 @@ function BusinessDetails({isLoggedIn}) {
           </div>
           <div className={`col outlineBox`}>
             <div className="row">
-              <a className="centered" href="#">{website}</a>
+              <a className="centered" href="#">{bizObject.website}</a>
               <div style={{flex:1}}/>
               <svg width="24" height="24"><path d="M20.47 3.07a.5.5 0 01.53.46v6a.5.5 0 01-.39.49.58.58 0 01-.19 0 .47.47 0 01-.35-.15L17.8 7.6l-5 5a1 1 0 01-1.41 0 1 1 0 010-1.41l5-5-2.27-2.27a.5.5 0 01.35-.85h6zM20 21H4a1 1 0 01-1-1V4a1 1 0 011-1h6a1 1 0 010 2H5v14h14v-5a1 1 0 012 0v6a1 1 0 01-1 1z"></path></svg>
             </div>
             <hr/>
             <div className="row">
-              <span className="centered">{phoneNumber}</span>
+              <span className="centered">{bizObject.phone_number}</span>
               <div style={{flex:1}}/>
               <svg width="24" height="24"><path d="M13.59 23.07A7 7 0 018.64 21L3 15.36a7 7 0 010-9.9l1.39-1.41a1 1 0 011.42 0l5 5a1 1 0 010 1.41 2.001 2.001 0 002.83 2.83 1 1 0 011.41 0l4.95 5a1 1 0 010 1.42L18.54 21a7 7 0 01-4.95 2.07zM5.1 6.17l-.71.71a5 5 0 000 7.07l5.66 5.66a5 5 0 007.07 0l.71-.71-3.63-3.63a4 4 0 01-4.86-.61 4 4 0 01-.61-4.86L5.1 6.17zm12.78 5.95a1 1 0 01-1-1 4 4 0 00-4-4 1 1 0 010-2 6 6 0 016 6 1 1 0 01-1 1zm4.19 0a1 1 0 01-1-1 8.19 8.19 0 00-8.19-8.19 1 1 0 010-2c5.625.006 10.184 4.565 10.19 10.19a1 1 0 01-1 1z"></path></svg>
             </div>
@@ -106,7 +91,7 @@ function BusinessDetails({isLoggedIn}) {
             <div className="row">
               <div className="col">
                 <a href="#">Get Directions</a>
-                <span style={{color:"rgba(110,112,114,1)", fontSize:"16px"}}>{address}</span>
+                <span style={{color:"rgba(110,112,114,1)", fontSize:"16px"}}>{bizObject.address}</span>
               </div>
               <div style={{flex:1}}/>
               <svg width="24" height="24" viewBox="0 0 22 22"><path d="M11 22a3 3 0 01-2.12-.88l-8-8a3 3 0 010-4.24l8-8a3 3 0 014.24 0l8 8a3 3 0 010 4.24l-8 8A3 3 0 0111 22zm0-20a1 1 0 00-.71.29l-8 8a1 1 0 000 1.42l8 8a1 1 0 001.42 0l8-8a1 1 0 000-1.42l-8-8A1 1 0 0011 2zm4.85 8.15a.48.48 0 010 .66l-3 3a.47.47 0 01-.35.15.43.43 0 01-.19 0 .5.5 0 01-.31-.46v-2.05a1 1 0 01-.25.05h-2a1 1 0 00-1 1v1a1 1 0 11-2 0v-1a3 3 0 013-3h2a1 1 0 01.25.05V7.5a.5.5 0 01.31-.5.47.47 0 01.54.15l3 3z"></path></svg>

@@ -4,10 +4,6 @@ import StarRating from "./StarRating"
 
 function Review({review:{comment, star_rating, user}}) {
   const { username, profile_picture } = user
- 
-  const starArray = Array(star_rating).fill(1)
-
-  let index = 0
 
   return (
     <div className="col" style={{margin:"1rem 0rem"}}>
