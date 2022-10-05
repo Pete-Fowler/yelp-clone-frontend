@@ -6,14 +6,10 @@ import styles from './BusinessResult.module.css';
 import StarRating from './StarRating'
 
 export default function BusinessResult({ id, name, type, address, reviews, price, image_url }) {
-
-  const starTotal = reviews.reduce((last, current) => {
-    return last + current.star_rating;
-  }, reviews[0].star_rating);
-
-  const starAverage = Math.round(starTotal / reviews.length * 10) / 10;
-
-  const comment = truncate(reviews[0].comment)
+  let comment = "no reviews have yet been written"
+  if (reviews.length !== 0) {
+    comment = truncate(reviews[0].comment)
+  }
 
   function truncate(str) {
     return str.length > 125 ? str.substring(0, 125) + '...' : str;
