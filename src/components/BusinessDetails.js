@@ -43,7 +43,7 @@ function BusinessDetails({isLoggedIn}) {
       <div id={style.photoHeader} style={{ background: `linear-gradient(to bottom, transparent, rgba(0,0,0,0.75)), url(${imgUrl})`, position:"relative"}}>
         <div className="col" style={{bottom:0, left:0, position:"absolute"}}>
           <h1>{name}</h1>
-          <span>{<StarRating reviews={reviews} />} {reviews.length} reviews</span>
+          {/* <span>{<StarRating reviews={reviews} />} {reviews.length} reviews</span> */}
           <span> {price} • {type} </span>
         </div>
       </div>
