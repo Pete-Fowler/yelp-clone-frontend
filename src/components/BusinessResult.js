@@ -19,7 +19,7 @@ export default function BusinessResult({ id, name, type, address, reviews, price
     return str.length > 125 ? str.substring(0, 125) + '...' : str;
   }
 
-  return <div className={`${styles.listing} softBottomBorder`}>
+  return <div className={`${styles.listing} softBottomBorder centered`}>
     <img className={styles.img} src={image_url} alt='Restaurant or food' />
     <div className={styles.content}>
       <Link className={styles.link} to={`/business/${id}`}> {name}</Link>
