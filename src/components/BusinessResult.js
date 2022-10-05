@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { array } from 'yargs';
 import chat from '../images/chatBubble.svg';
 import styles from './BusinessResult.module.css';
 import StarRating from './StarRating'
 
 export default function BusinessResult({ id, name, type, address, reviews, price, image_url }) {
+  const navigate = useNavigate()
+
   let comment = "no reviews have yet been written"
   if (reviews.length !== 0) {
     comment = truncate(reviews[0].comment)
@@ -15,10 +17,10 @@ export default function BusinessResult({ id, name, type, address, reviews, price
     return str.length > 125 ? str.substring(0, 125) + '...' : str;
   }
 
-  return <div className={`${styles.listing} softBottomBorder centered`}>
+  return <div onClick={()=>{navigate(`/business/${id}`)}} className={`${styles.listing} softBottomBorder centered`}>
     <img className={styles.img} src={image_url} alt='Restaurant or food' />
     <div className={styles.content}>
-      <Link className={styles.link} to={`/business/${id}`}> {name}</Link>
+      <p className={styles.link} to={`/business/${id}`}> {name}</p>
       <div><StarRating reviews={reviews}/></div>
       <div>
         <span className={styles.type}>{type} </span>
