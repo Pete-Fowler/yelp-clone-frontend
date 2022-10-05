@@ -4,11 +4,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 130px;
   width: 100%;
   z-index: 5;
   padding: 0px;
   margin: 0px;
+  padding-top: 24px;
 }
 
 .absolute {
