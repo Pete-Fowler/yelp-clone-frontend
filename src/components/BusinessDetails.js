@@ -5,7 +5,8 @@ import style from "./BusinessDetails.module.css"
 import Review from "./Review";
 import StarRating from "./StarRating";
 
-function BusinessDetails({isLoggedIn}) {
+function BusinessDetails({isLoggedIn, userId, sessionCookie}) {
+
   const [bizObject, setBizObject] = useState({reviews:[], })
 
   const navigate = useNavigate()
@@ -19,7 +20,7 @@ function BusinessDetails({isLoggedIn}) {
     })
   }, [id])
 
-  const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id}/>))
+  const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id} userId={userId} sessionCookie={sessionCookie}/>))
 
   console.log(bizObject.reviews);
 

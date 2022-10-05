@@ -8,7 +8,7 @@ import CreateReview from './CreateReview';
 import SearchResults from './SearchResults';
 import Footer from './footer';
 import Home from './Home';
-import StarRating from './StarRating';
+
 
 function App() {
   const [sessionCookie, setSessionCookie] = useState(JSON.parse(localStorage.getItem("sessionCookie")))
@@ -28,10 +28,9 @@ function App() {
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie} isLogin={true} setUserId={setUserId}/>}/>
         <Route path="/signup" element={<LoginSignup setSessionCookie={setSessionCookie} isLogin={false} setUserId={setUserId}/>}/>
         <Route path="/businesses" element={<div/>}/>
-
-        <Route path="/review/:bizId" element={<CreateReview userId={userId}/>}/>
+        <Route path="/review/:bizId" element={<CreateReview userId={userId} sessionCookie={sessionCookie}/>}/>
         <Route path="/search/:term" element={<SearchResults/>} />
-        <Route path="/business/:id" element={<BusinessDetails isLoggedIn={isLoggedIn}/>} />
+        <Route path="/business/:id" element={<BusinessDetails isLoggedIn={isLoggedIn} userId={userId} sessionCookie={sessionCookie}/>} />
       </Routes>
       <Footer/>
     </div>
