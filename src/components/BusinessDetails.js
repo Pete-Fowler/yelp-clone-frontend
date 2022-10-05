@@ -5,8 +5,6 @@ import style from "./BusinessDetails.module.css"
 import Review from "./Review";
 import StarRating from "./StarRating";
 
-// I think star rating is failing here because it's trying to render right when the state is being set and it is not yet really set. All this state can probably cause unnecessary rerenders, and it should be combined into one state, details, that has properties like details.imgUrl. The state could then move up one component or the fetch could be moved to the previous component where the link is to avoid this problem? Do not edit the starAverage in StarRating as someone did before, or it breaks it from working in the BusinessResult component
-
 function BusinessDetails({isLoggedIn}) {
   const [bizObject, setBizObject] = useState({reviews:[], })
 
@@ -23,12 +21,14 @@ function BusinessDetails({isLoggedIn}) {
 
   const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id}/>))
 
+  console.log(bizObject.reviews);
+
   return (
     <div>
       <div id={style.photoHeader} style={{ background: `linear-gradient(to bottom, transparent, rgba(0,0,0,0.75)), url(${bizObject.image_url})`, position:"relative"}}>
         <div className="col" style={{bottom:0, left:0, position:"absolute"}}>
           <h1>{bizObject.name}</h1>
-          <span>{/*<StarRating reviews={reviews} />*/} {bizObject.reviews.length} reviews</span>
+          <span><StarRating reviews={bizObject.reviews}/></span>
           <span> {bizObject.price} • {bizObject.business_type} </span>
         </div>
       </div>

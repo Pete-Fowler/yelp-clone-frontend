@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 import style from './StarRating.module.css';
 
 function StarRating({ reviews, displayDetails = true }) {
-console.log(reviews);
+
+  if(reviews.length === 0) return;
+
   const starTotal = reviews.reduce((last, current) => {
     return last + current.star_rating;
   }, reviews[0].star_rating);
