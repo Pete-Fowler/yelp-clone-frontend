@@ -3,31 +3,6 @@
   margin-top: 2rem;
 }
 
-.starBox {
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  color: white;
-  font-size: 1rem;
-  border-radius: 5px;
-  z-index: 5;
-  text-align: center;
-  padding: 0px;
-}
-
-.rating {
-  display: flex;
-  gap: 3px;
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  align-items: center;
-  width: fit-content;
-  z-index: 2;
-  overflow: hidden;
-  background-color: white;
-}
-
 .textareaBox {
   position: relative;
 }

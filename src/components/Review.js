@@ -7,7 +7,6 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
   const { username, profile_picture } = user
 
   let pfp = profile_picture==null? "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png" : profile_picture
-  console.log(pfp)
 
   const [patch, setPatch] = useState(false);
   const [newComment, setNewComment] = useState('');
@@ -82,16 +81,20 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
           <span>{patch ? "" : <StarRating reviews={[{star_rating: star_rating}]} displayDetails={false}/>}</span>
         </div>
       </div>
-      <div className={style.rating}> {patch 
-        ? <StarRatingPicker rate={rate} rating={rating} changeColor={changeColor} color={color}/> 
-        : ""} </div>
+      <div className={style.textareaBox}> 
+      {patch ? 
+        <StarRatingPicker rate={rate} rating={rating} changeColor={changeColor} color={color}/> 
+        : ""}
       <span>{patch 
         ? <textarea className={style.textbox} onChange={handleCommentChange}>{comment}</textarea> 
         : comment}</span>
+      </div>
       <div>{patch ? <button className="red" onClick={handlePatch} type="submit">Post Edit</button> 
         : "" }</div>
     </div>
   )
 }
-
+/*<div className={style.textareaBox}>
+        <StarRatingPicker rate={rate} rating={rating} changeColor={changeColor} color={color}/>
+        <textarea type="text" placeholder="I*/
 export default Review
