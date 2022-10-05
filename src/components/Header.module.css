@@ -38,8 +38,8 @@ button.headerBtn {
   margin-inline: 10px;
 }
 
-button.login {
-  border: 5px solid white;
+.login {
+  border: 2px solid white;
 }
 
 .usedArea {

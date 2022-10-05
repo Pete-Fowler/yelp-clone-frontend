@@ -17,18 +17,18 @@ function Header({ isLoggedIn, logOut }) {
 
   const headerClass = onHome ? styles.absolute : `${styles.sticky} softBottomBorder`;
   const logoSrc = onHome ? logoWhite : logoColor;
-  const loginClass = onHome ? styles.headerBtn : styles.stickyBtn;
+  const loginClass = onHome ? `${styles.headerBtn} ${styles.login}` : styles.stickyBtn;
 
   const navigate = useNavigate()
 
   let userArea = (
     <div className={"row " + styles.userArea}>
-      <button className={'login ' + loginClass} onClick={()=>{navigate("/login")}}>Log In</button>
+      <button className={loginClass} onClick={()=>{navigate("/login")}}>Log In</button>
       <button className={'red ' + styles.signUp + ' ' + styles.headerBtn} onClick={()=>{navigate("/signup")}}>Sign Up</button>
     </div>
   )
   if (isLoggedIn) {
-    userArea = ( <button onClick={logOut}> Log Out </button> )
+    userArea = ( <button className={'red ' + styles.signUp + ' ' + styles.headerBtn} onClick={logOut}> Log Out </button> )
   }
 
 
