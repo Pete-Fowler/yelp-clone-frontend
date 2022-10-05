@@ -16,7 +16,7 @@ export default function SearchResults() {
   }, [term])
 
 
-  return <div>
+  return <div className='col'>
     {searchResults.map(biz => <BusinessResult
       key={biz.id}
       id={biz.id}

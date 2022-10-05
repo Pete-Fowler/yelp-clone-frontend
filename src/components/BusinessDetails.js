@@ -24,7 +24,7 @@ function BusinessDetails({isLoggedIn}) {
   console.log(bizObject.reviews);
 
   return (
-    <div>
+    <div className="col">
       <div id={style.photoHeader} style={{ background: `linear-gradient(to bottom, transparent, rgba(0,0,0,0.75)), url(${bizObject.image_url})`, position:"relative"}}>
         <div className="col" style={{bottom:0, left:0, position:"absolute"}}>
           <h1>{bizObject.name}</h1>
@@ -32,7 +32,7 @@ function BusinessDetails({isLoggedIn}) {
           <span> {bizObject.price} • {bizObject.business_type} </span>
         </div>
       </div>
-      <div className="row" id={style.page}>
+      <div className="row centered" id={style.page}>
         <div className="col" id={style.mainContent}>
           <div className="row" id={style.controls}>
             <button className="red" onClick={()=>{isLoggedIn? navigate(`/review/${id}`): navigate(`/login`)}}>
