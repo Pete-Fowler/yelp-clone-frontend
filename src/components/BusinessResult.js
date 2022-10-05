@@ -6,7 +6,7 @@ import styles from './BusinessResult.module.css';
 import StarRating from './StarRating'
 
 export default function BusinessResult({ id, name, type, address, reviews, price, image_url }) {
- 
+
   const starTotal = reviews.reduce((last, current) => {
     return last + current.star_rating;
   }, reviews[0].star_rating);
@@ -19,7 +19,7 @@ export default function BusinessResult({ id, name, type, address, reviews, price
     return str.length > 125 ? str.substring(0, 125) + '...' : str;
   }
 
-  return <div className={styles.listing}>
+  return <div className={`${styles.listing} softBottomBorder`}>
     <img className={styles.img} src={image_url} alt='Restaurant or food' />
     <div className={styles.content}>
       <Link className={styles.link} to={`/business/${id}`}> {name}</Link>

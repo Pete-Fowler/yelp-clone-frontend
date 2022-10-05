@@ -62,3 +62,6 @@ button.red:hover {
 }
 
 
+.softBottomBorder {
+  border-bottom: 1px solid #ebebeb;
+}

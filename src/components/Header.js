@@ -11,11 +11,11 @@ function Header({ isLoggedIn, logOut }) {
   useEffect(() => {
     if (window.location.pathname === "/")
       setOnHome(true);
-    else 
+    else
       setOnHome(false);
   }, [window.location.pathname])
 
-  const headerClass = onHome ? styles.absolute : styles.sticky;
+  const headerClass = onHome ? styles.absolute : `${styles.sticky} softBottomBorder`;
   const logoSrc = onHome ? logoWhite : logoColor;
   const loginClass = onHome ? styles.headerBtn : styles.stickyBtn;
 
