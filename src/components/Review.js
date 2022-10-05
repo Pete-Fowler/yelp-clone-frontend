@@ -104,7 +104,7 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
       </div>
       <div className={style.rating} style={gradient}> {patch ? starRatingPicker : ""} </div>
       <span>{patch ? <textarea className={style.textbox} onChange={handleCommentChange}>{comment}</textarea>: comment}</span>
-      <div>{patch ? <button onClick={handlePatch} type="submit">Post Edit</button> : "" }</div>
+      <div>{patch ? <button className="red" onClick={handlePatch} type="submit">Post Edit</button> : "" }</div>
     </div>
   )
 }
