@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import style from './StarRating.module.css';
 
-function StarRating({ id, name, type, address, reviews, price, image_url }) {
-
+function StarRating({ reviews }) {
+console.log(reviews);
   const starTotal = reviews.reduce((last, current) => {
     return last + current.star_rating;
   }, reviews[0].star_rating);
