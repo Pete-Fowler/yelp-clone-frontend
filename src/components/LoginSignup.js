@@ -38,19 +38,22 @@ function LoginSignup({setSessionCookie, isLogin, setUserId}) {
   }
 
   return (
-    <div className="row centered">
-      <form className="centered col" onSubmit={handleSubmit} style={{marginRight:"2rem"}}>
-        <label htmlFor="username">Username</label>
-        <input onChange={(e)=>{setUsername(e.target.value)}} value={username} name="username" type="text"/>
+    <div className="row centered" style={{marginTop:"2rem"}}>
+      <form className="centered col" onSubmit={handleSubmit} style={{marginRight:"2rem",maxWidth:"20rem"}}>
+        <h2 className="centered" style={{color:"var(--red)"}}>{isLogin?"Log in to":"Sign up for"} Yelp</h2>
+        <h4 className="centered">Connect with great local businesses</h4>
+        <p  className="legalText" style={{marginBottom:"1rem"}}>By continuing, you agree to Yelp’s Terms of Service and acknowledge Yelp’s Privacy Policy.</p>
 
-        <label htmlFor="password">Password</label>
-        <input onChange={(e)=>{setPassword(e.target.value)}} value={password} name="password" type="password" style={{marginBottom:"1rem"}}/>
+
+        <input style={{marginBottom:"0.5rem"}} onChange={(e)=>{setUsername(e.target.value)}} placeholder="username" value={username} type="text"/>
+
+        <input style={{marginBottom:"0.5rem"}} onChange={(e)=>{setPassword(e.target.value)}} placeholder="password" value={password} type="password"/>
+
+        <button className="red" type="submit" style={{marginBottom:"0.5rem"}}>{isLogin?"Log In":"Sign Up"}</button>
 
         <span style={{color:"red"}}>{errorText}</span>
 
-        <button className="red" type="submit">{isLogin?"Log In":"Sign Up"}</button>
-
-        <span>
+        <span style={{fontSize:"12px", marginLeft:"auto", color: "#999"}}>
           {isLogin?"New to Yelp? ":"Already on Yelp? "}
           <span style={{color:"#1a0dab", textDecoration:"underline"}} onClick={ () => {isLogin? navigate("/signup"):navigate("/login") } }>{isLogin?"Sign Up":"Log In"}</span>
         </span>

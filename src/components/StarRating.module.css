@@ -1,8 +1,14 @@
 
+.starComponent {
+  display: flex;
+  align-items: center;
+}
+
 .starsBox {
   position: relative;
   display: flex;
   width: fit-content;
+  gap: 2px;
   z-index: 0;
   overflow: hidden;
 }
@@ -17,40 +23,13 @@
   position: relative;
   z-index: 5;
   text-align: center;
-  border: 2px solid white;
-  box-shadow: 0px 0px 0px 2px white;
 }
 
-.star {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
+.data {
+  padding-left: 5px;
+}
 
-  .star-rating {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-
-.on {
-    color: #000;
-  }
-
-.off {
-    color: #ccc;
-  }
-
- .rating { 
-    display: flex; 
-    flex-direction: row;
-    align-self: center; 
-    margin: 0px auto; 
-   }
- 
+.average {
+  color: black;
+}
+  

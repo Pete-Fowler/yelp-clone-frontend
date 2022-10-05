@@ -4,10 +4,9 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 130px;
   width: 100%;
   z-index: 5;
-  padding: 0px;
+  padding: 24px 0px;
   margin: 0px;
 }
 
@@ -19,7 +18,6 @@
   position: sticky;
   background-color: #fff;
   top: 0px;
-  border-bottom: 1px solid gray;
 }
 
 .stickyBtn {

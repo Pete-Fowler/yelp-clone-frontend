@@ -96,7 +96,7 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
           <div className={style.edit}>{user.id === userId ?  <div><button onClick={startPatch}>Edit</button></div>  : "" }</div>
           <div className={style.delete}>{user.id === userId ?  <div><button onClick={handleDelete}>Delete</button></div>  : "" }</div>
           <span style={{fontSize:"1.25rem"}}>{username}</span>
-          <span>{patch ? "" : <StarRating reviews={[{star_rating: star_rating}]}/>}</span>
+          <span>{patch ? "" : <StarRating reviews={[{star_rating: star_rating}]} displayDetails={false}/>}</span>
         </div>
       </div>
       <div className={style.rating} style={gradient}> {patch ? starRatingPicker : ""} </div>

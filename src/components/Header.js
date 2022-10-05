@@ -11,11 +11,11 @@ function Header({ isLoggedIn, logOut }) {
   useEffect(() => {
     if (window.location.pathname === "/")
       setOnHome(true);
-    else 
+    else
       setOnHome(false);
   }, [window.location.pathname])
 
-  const headerClass = onHome ? styles.absolute : styles.sticky;
+  const headerClass = onHome ? styles.absolute : `${styles.sticky} softBottomBorder`;
   const logoSrc = onHome ? logoWhite : logoColor;
   const loginClass = onHome ? styles.headerBtn : styles.stickyBtn;
 
@@ -35,8 +35,10 @@ function Header({ isLoggedIn, logOut }) {
 
   return (
     <nav className={styles.nav + ' ' + headerClass}>
-        <Link to="/"><img className={styles.logo} src={logoSrc} alt='Yelp logo' /></Link>
-        <SearchBar />
+      <Link to="/"><img className={styles.logo} src={logoSrc} alt='Yelp logo' /></Link>
+      <div style={{flex:1}}/>
+      <SearchBar />
+      <div style={{flex:1}}/>
       {userArea}
     </nav>
   )
