@@ -1,35 +1,5 @@
-.starBox {
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  color: white;
-  font-size: 1rem;
-  border-radius: 5px;
+.textareaBox {
   position: relative;
-  z-index: 5;
-  text-align: center;
-  border: 2000000px solid white;
-  box-shadow: 0px 0px 0px 2px white;
-  padding: 0px;
-}
-
-.rating {
-  display: flex;
-  position: absolute;
-  width: fit-content;
-  z-index: 0;
-  top: 20px;
-  left: 20px;
-}
-
-.textbox {
-  width: 50em;
-  height: 25em;
-}
-
-.hoverText {
-  margin-left: 15rem;
-  padding: 5px;
 }
 
 .submitButton {
