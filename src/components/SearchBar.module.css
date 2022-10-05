@@ -4,6 +4,7 @@
   height: 48px;
   margin-right: auto;
   margin-left: 20px;
+  box-shadow: 0 2px 18px #00000026;
 }
 
 .form {
@@ -24,11 +25,11 @@
   position: relative;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  border-right: none;
+  border: none;
 }
 
 .inputR {
-  border-left: none;
+  border: none;
 }
 
 .searchBtn {
@@ -50,8 +51,7 @@
 
 .borderPillContainer {
   background-color: white;
-  border-top: 1px solid #c8c9ca;
-  border-bottom: 1px solid #c8c9ca;
+  border: none;
 }
 .borderPill {
   background-color: #ebebeb;
