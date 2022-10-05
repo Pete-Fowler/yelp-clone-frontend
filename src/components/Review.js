@@ -9,8 +9,10 @@ function Review({review:{comment, star_rating, user}}) {
     <div className="col" style={{margin:"1rem 0rem"}}>
       <div className="row">
         <img style={{borderRadius:"50%", width:"4rem", height:"4rem", marginRight:"0.5rem", marginBottom:"0.5rem"}}  src={profile_picture} alt={`${username}'s icon`}/>
-        <span style={{fontSize:"1.25rem"}}>{username}</span>
-        <span><StarRating reviews={[{star_rating: star_rating}]} /></span>
+        <div className="col">
+          <span style={{fontSize:"1.25rem"}}>{username}</span>
+          <span><StarRating reviews={[{star_rating: star_rating}]} /></span>
+        </div>
       </div>
       <span>{comment}</span>
     </div>
