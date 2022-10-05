@@ -23,7 +23,7 @@ export default function BusinessResult({ id, name, type, address, reviews, price
     <img className={styles.img} src={image_url} alt='Restaurant or food' />
     <div className={styles.content}>
       <Link className={styles.link} to={`/business/${id}`}> {name}</Link>
-      <div><StarRating reviews={reviews}/> ({reviews.length} reviews)</div>
+      <div><StarRating reviews={reviews}/></div>
       <div>
         <span className={styles.type}>{type} </span>
         <span className={styles.price}>{price}</span>
