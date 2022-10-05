@@ -5,6 +5,9 @@ import style from "./Review.module.css"
 function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}) {
   const { username, profile_picture } = user
 
+  let pfp = profile_picture==null? "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png" : profile_picture
+  console.log(pfp)
+
   const [patch, setPatch] = useState(false)
   const [newComment, setNewComment] = useState('')
   const [rating, setRating] = useState(0)
@@ -37,7 +40,7 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
     setPatch(!patch)
 
     }
-    
+
 
     function handlePatch() {
 
@@ -61,7 +64,7 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
       .then(() => {
         window.location.reload()
       })
-      
+
     }
 
   function handleDelete() {
@@ -80,16 +83,16 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
         },
         body: JSON.stringify(userData)
       })
-      
+
       .then(() => {
         window.location.reload()
       })
   }
 
   return (
-    <div className="col" style={{margin:"1rem 0rem"}}>
+    <div className="col" style={{margin:"1rem 0rem", position:"relative"}}>
       <div className="row">
-        <img style={{borderRadius:"50%", width:"4rem", height:"4rem", marginRight:"0.5rem", marginBottom:"0.5rem"}}  src={profile_picture} alt={`${username}'s icon`}/>
+        <img style={{borderRadius:"50%", width:"4rem", height:"4rem", marginRight:"0.5rem", marginBottom:"0.5rem"}}  src={pfp} alt={`${username}'s icon`}/>
         <div className="col">
           <div className={style.edit}>{user.id === userId ?  <div><button onClick={startPatch}>Edit</button></div>  : "" }</div>
           <div className={style.delete}>{user.id === userId ?  <div><button onClick={handleDelete}>Delete</button></div>  : "" }</div>
@@ -99,7 +102,7 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
       </div>
       <div className={style.rating} style={gradient}> {patch ? starRatingPicker : ""} </div>
       <span>{patch ? <textarea className={style.textbox} onChange={handleCommentChange}>{comment}</textarea>: comment}</span>
-      <div>{patch ? <button onClick={handlePatch} type="submit">Post Edit</button> : "" }</div>
+      <div>{patch ? <button className="red" onClick={handlePatch} type="submit">Post Edit</button> : "" }</div>
     </div>
   )
 }

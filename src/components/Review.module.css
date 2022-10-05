@@ -1,67 +1,60 @@
 .starBox {
-    width: 25px;
-    height: 25px;
-    line-height: 25px;
-    color: white;
-    font-size: 1rem;
-    border-radius: 5px;
-    position: relative;
-    z-index: 5;
-    text-align: center;
-    border: 2px solid white;
-    box-shadow: 0px 0px 0px 2px white;
-    padding: 0px;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  border: 2px solid white;
+  box-shadow: 0px 0px 0px 2px white;
+  padding: 0px;
 }
 
 
 .rating {
-    display: flex;
-    align-self: center;
-    margin: 0px auto;
-    position: absolute;
-    width: fit-content;
-    z-index: 0;
-    overflow: hidden;
-    margin-top: 2rem;
-    justify-self: flex-start;
-    margin-right: 38rem;
-    margin-top: 3.5rem
+  display: flex;
+  position: absolute;
+  width: fit-content;
+  z-index: 0;
+  top: 4.75rem;
+  left: .25rem;
 }
 
 .textbox {
-    width: 50em;
-    height: 25em;
-
+  width: 50em;
+  height: 25em;
 }
 
 .hoverText {
-    margin-left: 15rem;
-    padding: 5px;
+  margin-left: 15rem;
+  padding: 5px;
 }
 
 .submitButton {
-    width: 10em;
+  width: 10em;
 }
 
 .footer {
-    margin-bottom: 20rem;
+  margin-bottom: 20rem;
 }
 
 .edit {
-    margin-left: 46rem;
-    position: absolute;
-    display: flex;
+  margin-left: 46rem;
+  position: absolute;
+  display: flex;
 }
 
 .delete {
-    margin-left: 50rem;
-    position: absolute;
-    display: flex;
+  margin-left: 50rem;
+  position: absolute;
+  display: flex;
 }
 
 .textbox {
-    width: 50em;
-    height: 7em;
-    padding-top: 2.5rem;
-    margin-top: -1.5rem
+  width: 50em;
+  height: 7em;
+  padding-top: 1.8rem;
 }
