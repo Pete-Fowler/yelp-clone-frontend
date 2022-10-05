@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import style from './StarRating.module.css';
 
 function StarRating({ reviews, displayDetails = true }) {
@@ -43,6 +43,8 @@ function StarRating({ reviews, displayDetails = true }) {
     const stars = starArr.map(val => {
       return <div className={style.starBox} style={{background: `linear-gradient(90deg, #ff643d, #ff643d ${val * 100}%, #bbbac0 ${val * 100}%)`}}>★</div>
     })
+
+    
 
     const details = displayDetails ? <div className={style.data}>
       <b className={style.average}>{starAverage > 5 ? 5 : starAverage}</b> ({reviews.length} reviews)</div>
