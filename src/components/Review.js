@@ -3,9 +3,8 @@ import React from "react"
 import StarRating from "./StarRating"
 
 function Review({review:{comment, star_rating, user}}) {
-  console.log(user)
   const {username, profile_picture} = user
- 
+
   const starArray = Array(star_rating).fill(1)
 
   let index = 0
