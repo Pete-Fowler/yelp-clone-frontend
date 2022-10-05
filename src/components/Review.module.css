@@ -19,7 +19,7 @@
   position: absolute;
   width: fit-content;
   z-index: 0;
-  top: 3.25rem;
+  top: 4.75rem;
   left: .25rem;
 }
 
@@ -57,5 +57,4 @@
   width: 50em;
   height: 7em;
   padding-top: 1.8rem;
-  margin-top: -1.5rem
 }
