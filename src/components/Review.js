@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react"
 import React, { useState } from "react"
 import StarRating from "./StarRating"
 import style from "./Review.module.css"
@@ -11,19 +10,18 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
   const [rating, setRating] = useState(0)
   const [hover, setHover] = useState(0)
 
-  const percent = hover /5 * 100
+  const percent = hover / 5 * 100
 
   const gradient = {background: `linear-gradient(90deg, #ff643d, #ff643d ${percent}%, #bbbac0 ${percent}%)`};
 
   const starRatingPicker = [...Array(5)].map((star, index) => {
     index += 1;
     return (
-        
       <button type="button" key={index}
-      className={style.starBox}
-      onClick={() => setRating(index)}
-      onMouseEnter={() => setHover(index)}
-      onMouseLeave={() => setHover(rating)}>
+        className={style.starBox}
+        onClick={() => setRating(index)}
+        onMouseEnter={() => setHover(index)}
+        onMouseLeave={() => setHover(rating)}>
         ★
       </button>
     );
