@@ -18,7 +18,7 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
   const starRatingPicker = [...Array(5)].map((star, index) => {
     index += 1;
     return (
-        
+
       <button type="button" key={index}
       className={style.starBox}
       onClick={() => setRating(index)}
@@ -39,7 +39,7 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
     setPatch(!patch)
 
     }
-    
+
 
     function handlePatch() {
 
@@ -63,7 +63,7 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
       .then(() => {
         window.location.reload()
       })
-      
+
     }
 
   function handleDelete() {
@@ -82,14 +82,14 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
         },
         body: JSON.stringify(userData)
       })
-      
+
       .then(() => {
         window.location.reload()
       })
   }
 
   return (
-    <div className="col" style={{margin:"1rem 0rem"}}>
+    <div className="col" style={{margin:"1rem 0rem", position:"relative"}}>
       <div className="row">
         <img style={{borderRadius:"50%", width:"4rem", height:"4rem", marginRight:"0.5rem", marginBottom:"0.5rem"}}  src={profile_picture} alt={`${username}'s icon`}/>
         <div className="col">
