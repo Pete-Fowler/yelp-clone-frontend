@@ -11,7 +11,7 @@ function Review({review:{comment, star_rating, user}}) {
         <img style={{borderRadius:"50%", width:"4rem", height:"4rem", marginRight:"0.5rem", marginBottom:"0.5rem"}}  src={profile_picture} alt={`${username}'s icon`}/>
         <div className="col">
           <span style={{fontSize:"1.25rem"}}>{username}</span>
-          <span><StarRating reviews={[{star_rating: star_rating}]} /></span>
+          <span><StarRating reviews={[{star_rating: star_rating}]} displayDetails={false}/></span>
         </div>
       </div>
       <span>{comment}</span>
