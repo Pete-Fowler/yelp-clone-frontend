@@ -3,8 +3,8 @@
   position: relative;
   display: flex;
   width: fit-content;
-  gap: 2px;
   z-index: 0;
+  overflow: hidden;
 }
 
 .starBox {
@@ -17,9 +17,9 @@
   position: relative;
   z-index: 5;
   text-align: center;
+  border: 2px solid white;
+  box-shadow: 0px 0px 0px 2px white;
 }
-
-
 
 .star {
     background-color: transparent;
