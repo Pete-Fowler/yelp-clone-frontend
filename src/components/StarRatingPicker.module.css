@@ -15,19 +15,12 @@
 .rating {
   display: flex;
   gap: 3px;
-  position: absolute;
-  left: 20px;
-  top: 20px;
   align-items: center;
   width: fit-content;
   z-index: 2;
   overflow: hidden;
   background-color: white;
 }
-
-/* .textareaBox {
-  position: relative;
-} */
 
 .hoverText {
   background-color: white;

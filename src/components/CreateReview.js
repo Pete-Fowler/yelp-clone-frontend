@@ -13,7 +13,6 @@ function CreateReview({ userId, sessionCookie }) {
 
   const navigate = useNavigate()
 
-
   useEffect(() => {
     fetch(`http://localhost:9292/business/${bizId}`)
     .then(r=>r.json()).then((data)=>{
@@ -84,7 +83,7 @@ function CreateReview({ userId, sessionCookie }) {
     <form onSubmit={handleSubmit} className={style.form}>
       <h2>{bizName}</h2>
       <div className={style.textareaBox}>
-        <StarRatingPicker rate={rate} rating={rating} changeColor={changeColor} color={color}/>
+        <StarRatingPicker rate={rate} rating={rating} changeColor={changeColor} color={color} parent={'createReview'}/>
         <textarea type="text" placeholder="I’ve been coming to this place for 3 years now and it’s all you can ask for in a pub with TVs, a jukebox and an outdoor patio. It’s a great spot to catch a Warriors game or just grab drinks with friends. Never been a huge Bloody Mary fan, but after watching the bartender make a few here I had to try one and... wow. They’re legit. The Spicy Mule also gets the job done. Tons of beer on tap, which just adds to the appeal. Head to the back deck and you can kill a whole day before you even realize it." onChange={handleCommentChange} className={style.textbox}/>
       </div>
       <button type="submit" className="red" onSubmit={handleSubmit}>Post Review</button>

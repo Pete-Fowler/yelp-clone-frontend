@@ -2,11 +2,6 @@
   position: relative;
 }
 
-.hoverText {
-  margin-left: 15rem;
-  padding: 5px;
-}
-
 .submitButton {
   width: 10em;
 }
