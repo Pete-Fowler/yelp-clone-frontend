@@ -5,7 +5,7 @@ function StarRating({ id, name, type, address, reviews, price, image_url }) {
 
   const starTotal = reviews.reduce((last, current) => {
     return last + current.star_rating;
-  }, reviews.star_rating);
+  }, reviews[0].star_rating);
 
   let index = 0
 
