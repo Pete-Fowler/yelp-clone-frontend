@@ -2,12 +2,19 @@ import React, { useEffect } from 'react'
 import style from './StarRating.module.css';
 
 function StarRating({ reviews, displayDetails = true }) {
+    
+  let starTotal;
+  let starAverage;
 
-    const starTotal = reviews.reduce((last, current) => {
+  if(reviews.length > 1) {
+    starTotal = reviews.reduce((last, current) => {
       return last + current.star_rating;
     }, reviews[0].star_rating);
-
-    const starAverage = (Math.round(starTotal / reviews.length * 10) / 10);
+    starAverage = (Math.round(starTotal / reviews.length * 10) / 10);
+  }
+  else {
+    starAverage = reviews[0].star_rating;
+  }
 
     const fullStars = Math.floor(starAverage);
 
@@ -18,12 +25,14 @@ function StarRating({ reviews, displayDetails = true }) {
       starArr.push(1);
     }
 
+    if(starAverage < 5) {
     const partialStar = starAverage - fullStars;
     starArr.push(partialStar);
+    
     const emptyStars = 5 - starArr.length;
-
-    for(let i=1; i<=emptyStars; i++) {
+      for(let i=1; i<=emptyStars; i++) {
       starArr.push(0);
+      }
     }
 
     const stars = starArr.map(val => {
