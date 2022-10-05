@@ -119,8 +119,10 @@ function CreateReview({ userId, sessionCookie }) {
   return (
     <form onSubmit={handleSubmit} className={style.form}>
       <h2>{bizName}</h2>
-      <div className={style.rating} style={gradient}> {starRatingPicker} </div> <p className={style.hoverText}>{hoverRating()}</p>
-      <textarea type="text" placeholder="I’ve been coming to this place for 3 years now and it’s all you can ask for in a pub with TVs, a jukebox and an outdoor patio. It’s a great spot to catch a Warriors game or just grab drinks with friends. Never been a huge Bloody Mary fan, but after watching the bartender make a few here I had to try one and... wow. They’re legit. The Spicy Mule also gets the job done. Tons of beer on tap, which just adds to the appeal. Head to the back deck and you can kill a whole day before you even realize it." onChange={handleCommentChange} className={style.textbox}/>
+      <div className={style.textareaBox}>
+        <div className={style.rating}> {starRatingPicker}  <p className={style.hoverText}>{hoverRating()}</p></div>
+        <textarea type="text" placeholder="I’ve been coming to this place for 3 years now and it’s all you can ask for in a pub with TVs, a jukebox and an outdoor patio. It’s a great spot to catch a Warriors game or just grab drinks with friends. Never been a huge Bloody Mary fan, but after watching the bartender make a few here I had to try one and... wow. They’re legit. The Spicy Mule also gets the job done. Tons of beer on tap, which just adds to the appeal. Head to the back deck and you can kill a whole day before you even realize it." onChange={handleCommentChange} className={style.textbox}/>
+      </div>
       <button type="submit" className="red">Post Review</button>
     </form>
     )
