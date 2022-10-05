@@ -18,9 +18,10 @@ export default function SearchBar () {
   }
 
   return <div className={styles.searchBar}>
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className={`${styles.form} row`} onSubmit={handleSubmit}>
       <input type='text' className={styles.inputL} value={searchTerm} onChange={handleChange}placeholder="tacos, cheap dinner, Max's"></input>
-      <div className={styles.border} /><input type='text' className={styles.inputR} placeholder="Denver, CO 80203"></input>
+      <div className={`row ${styles.borderPillContainer}`}><div className={`centered ${styles.borderPill}`} /></div>
+      <input type='text' className={styles.inputR} placeholder="Denver, CO 80203"></input>
       <button className={styles.searchBtn} type='submit'><img src={searchIcon} className={styles.searchIcon} alt='Search icon' /></button>
     </form>
   </div>

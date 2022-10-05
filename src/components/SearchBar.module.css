@@ -24,7 +24,7 @@
   position: relative;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  border-right: 2px solid gray;
+  border-right: none;
 }
 
 .inputR {
@@ -46,4 +46,17 @@
   border: 0px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.borderPillContainer {
+  background-color: white;
+  border-top: 1px solid #c8c9ca;
+  border-bottom: 1px solid #c8c9ca;
+}
+.borderPill {
+  background-color: #ebebeb;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 2px;
+  height: 80%;
 }
