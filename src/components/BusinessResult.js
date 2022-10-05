@@ -7,11 +7,7 @@ import StarRating from './StarRating'
 
 export default function BusinessResult({ id, name, type, address, reviews, price, image_url }) {
 
-  const starTotal = reviews.reduce((last, current) => {
-    return last + current.star_rating;
-  }, reviews[0].star_rating);
-
-  const starAverage = Math.round(starTotal / reviews.length * 10) / 10;
+  
 
   const comment = truncate(reviews[0].comment)
 
