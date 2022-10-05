@@ -28,7 +28,7 @@ function Header({ isLoggedIn, logOut }) {
     </div>
   )
   if (isLoggedIn) {
-    userArea = ( <button onClick={logOut}> Log Out </button> )
+    userArea = ( <button className={'red ' + styles.signUp + ' ' + styles.headerBtn} onClick={logOut}> Log Out </button> )
   }
 
 
