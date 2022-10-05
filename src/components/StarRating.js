@@ -8,6 +8,7 @@ function StarRating({ reviews, displayDetails = true }) {
 
   let starTotal;
   let starAverage;
+  
 
   if(reviews.length > 1) {
     starTotal = reviews.reduce((last, current) => {
@@ -18,6 +19,7 @@ function StarRating({ reviews, displayDetails = true }) {
   else {
     starAverage = reviews[0].star_rating;
   }
+  
 
     const fullStars = Math.floor(starAverage);
 
@@ -43,7 +45,7 @@ function StarRating({ reviews, displayDetails = true }) {
     })
 
     const details = displayDetails ? <div className={style.data}>
-      <b className={style.average}>{starAverage}</b> ({reviews.length} reviews)</div>
+      <b className={style.average}>{starAverage > 5 ? 5 : starAverage}</b> ({reviews.length} reviews)</div>
       : null;
 
     return (
