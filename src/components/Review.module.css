@@ -42,13 +42,13 @@
 }
 
 .edit {
-  margin-left: 46rem;
+  margin-left: 30rem;
   position: absolute;
   display: flex;
 }
 
 .delete {
-  margin-left: 50rem;
+  margin-left: 35rem;
   position: absolute;
   display: flex;
 }

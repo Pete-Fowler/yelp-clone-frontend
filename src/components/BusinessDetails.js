@@ -22,7 +22,8 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie}) {
 
   const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id} userId={userId} sessionCookie={sessionCookie}/>))
 
-  console.log(bizObject.reviews);
+  console.log(bizObject.address);
+  
 
   return (
     <div className="col">
@@ -55,7 +56,7 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie}) {
           </div>
           <div>
             <h2 style={{marginTop:"2rem"}}>Recommended Reviews</h2>
-            {reviewNodes}
+            {reviewNodes.reverse()}
           </div>
         </div>
         <div className="col">
