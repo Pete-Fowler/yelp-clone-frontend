@@ -18,7 +18,7 @@ body {
   border-radius: 4px;
   padding: 16px;
 }
-h1,h2,h3,h4,h5,h6 { margin: 0px; }
+h1,h2,h3,h4,h5,h6,p { margin: 0px; }
 
 /* input styling */
 button, input, select {
@@ -68,4 +68,11 @@ button.red:hover {
 
 [id*="BusinessDetails"] [class*="StarRating_average"] {
   color: white!important;
+}
+
+.legalText {
+  color: #333;
+  font-size: 12px;
+  line-height: 1.5em;
+  text-align: center;
 }
