@@ -65,3 +65,7 @@ button.red:hover {
 .softBottomBorder {
   border-bottom: 1px solid #ebebeb;
 }
+
+[id*="BusinessDetails"] [class*="StarRating_average"] {
+  color: white!important;
+}
