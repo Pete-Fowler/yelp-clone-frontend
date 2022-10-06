@@ -11,22 +11,22 @@ export default function StarRatingPicker({ rate, rating, changeColor, color, par
   }, [])
 
   function hoverRating() {
-    if (rating == 0) {
+    if (rating === 0) {
         return "Select your rating"
     }
-    else if (rating == 1) {
+    else if (rating === 1) {
         return "Not good"
     }
-    else if (rating == 2) {
+    else if (rating === 2) {
         return "Could've been better"
     }
-    else if (rating == 3) {
+    else if (rating === 3) {
         return "OK"
     }
-    else if (rating == 4) {
+    else if (rating === 4) {
         return "Good"
     }
-    else if (rating == 5) {
+    else if (rating === 5) {
         return "Great"
     }
   }

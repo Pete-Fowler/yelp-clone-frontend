@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import BusinessResult from './BusinessResult';
-import styles from './SearchResults';
+
 
 export default function SearchResults() {
   const { term } = useParams();
@@ -14,7 +14,7 @@ export default function SearchResults() {
       setSearchResults(data)
     });
   }, [term])
-
+  
 
   return <div className='col'>
     {searchResults.map(biz => <BusinessResult

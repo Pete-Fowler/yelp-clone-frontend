@@ -28,26 +28,6 @@ function CreateReview({ userId, sessionCookie, setHistory }) {
     setComment(event.target.value)
   }
 
-  function hoverRating() {
-      if (rating == 0) {
-          return "Select your rating"
-      }
-      else if (rating == 1) {
-          return "Not good"
-      }
-      else if (rating == 2) {
-          return "Could've been better"
-      }
-      else if (rating == 3) {
-          return "OK"
-      }
-      else if (rating == 4) {
-          return "Good"
-      }
-      else if (rating == 5) {
-          return "Great"
-      }
-  }
 
     function handleSubmit(event) {
         event.preventDefault()

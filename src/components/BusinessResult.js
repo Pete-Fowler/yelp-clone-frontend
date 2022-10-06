@@ -18,10 +18,10 @@ export default function BusinessResult({ id, name, type, address, reviews, price
 
   const transactionsArray = JSON.parse(transactions);
 
-  const svg = <svg width="16" height="16" class="icon_svg"><path fill='#2eb187' d="M6.308 11.763a.748.748 0 01-.53-.22l-2.641-2.64a.75.75 0 011.06-1.061l2.11 2.11 5.496-5.495a.75.75 0 111.06 1.06l-6.025 6.026a.748.748 0 01-.53.22z"></path></svg>;
+  const svg = <svg width="16" height="16" className="icon_svg"><path fill='#2eb187' d="M6.308 11.763a.748.748 0 01-.53-.22l-2.641-2.64a.75.75 0 011.06-1.061l2.11 2.11 5.496-5.495a.75.75 0 111.06 1.06l-6.025 6.026a.748.748 0 01-.53.22z"></path></svg>;
 
   const transactionsJsx = transactionsArray.map(t => <div key={id} className={styles.transaction}>{svg}{t === "restaurant_reservation" ? 'Reservations' : t[0].toUpperCase() + t.slice(1)}</div>);
-
+  console.log(id)
   return <div onClick={()=>{navigate(`/business/${id}`)}} className={`${styles.listing} softBottomBorder centered`}>
     <img className={styles.img} src={image_url} alt='Restaurant or food' />
     <div className={styles.content}>

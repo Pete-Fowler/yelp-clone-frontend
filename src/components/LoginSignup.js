@@ -58,7 +58,7 @@ function LoginSignup({setSessionCookie, isLogin, setUserId}) {
           <span style={{color:"#1a0dab", textDecoration:"underline"}} onClick={ () => {isLogin? navigate("/signup"):navigate("/login") } }>{isLogin?"Sign Up":"Log In"}</span>
         </span>
       </form>
-      <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png"/>
+      <img src="https://s3-media0.fl.yelpcdn.com/assets/2/www/img/7922e77f338d/signup/signup_illustration.png" alt="signup illustration"/>
     </div>
   )
 }

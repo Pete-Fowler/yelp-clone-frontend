@@ -38,8 +38,6 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie, history, setHistory
 
   const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id} userId={userId} sessionCookie={sessionCookie} isLoggedIn={isLoggedIn}/>))
 
-  console.log(history)
-
   return (
     <div className="col">
       <div id={style.photoHeader} style={{ background: `linear-gradient(to bottom, transparent, rgba(0,0,0,0.75)), url(${bizObject.image_url})`, position:"relative"}}>
@@ -53,19 +51,19 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie, history, setHistory
         <div className="col" id={style.mainContent}>
           <div className="row" id={style.controls}>
             <button className="red" onClick={()=>{isLoggedIn? navigate(`/review/${id}`): navigate(`/login`)}}>
-              <span role="img"><svg width="24" height="24" class="icon_svg"><path d="M17.87 22a.93.93 0 01-.46-.12L12 19.08l-5.41 2.84a1 1 0 01-1-.08 1 1 0 01-.4-1l1-6-4.39-4.26a1 1 0 01.56-1.7L8.4 8l2.7-5.48a1 1 0 011.8 0L15.6 8l6 .88a1 1 0 01.56 1.7l-4.38 4.27 1 6a1 1 0 01-1 1.17l.09-.02zM12 17c.163.002.323.04.47.11l4.07 2.15-.78-4.54a1 1 0 01.29-.89l3.3-3.21-4.56-.72a1 1 0 01-.79-.54l-2-4.14-2 4.14a1 1 0 01-.75.54l-4.56.67L8 13.78a1 1 0 01.29.89l-.78 4.54 4.07-2.15A1.12 1.12 0 0112 17z"></path></svg></span>
+              <span role="img"><svg width="24" height="24" className="icon_svg"><path d="M17.87 22a.93.93 0 01-.46-.12L12 19.08l-5.41 2.84a1 1 0 01-1-.08 1 1 0 01-.4-1l1-6-4.39-4.26a1 1 0 01.56-1.7L8.4 8l2.7-5.48a1 1 0 011.8 0L15.6 8l6 .88a1 1 0 01.56 1.7l-4.38 4.27 1 6a1 1 0 01-1 1.17l.09-.02zM12 17c.163.002.323.04.47.11l4.07 2.15-.78-4.54a1 1 0 01.29-.89l3.3-3.21-4.56-.72a1 1 0 01-.79-.54l-2-4.14-2 4.14a1 1 0 01-.75.54l-4.56.67L8 13.78a1 1 0 01.29.89l-.78 4.54 4.07-2.15A1.12 1.12 0 0112 17z"></path></svg></span>
               {isLoggedIn? "Write a review" : "Log In to review"}
             </button>
             <button>
-              <span role="img"><svg width="24" height="24" class="icon_svg"><path d="M16 2a1 1 0 01.95.68L17.72 5H20a3 3 0 013 3v11a3 3 0 01-3 3H4a3 3 0 01-3-3V8a3 3 0 013-3h2.28l.77-2.32A1 1 0 018 2h8zm-.72 2H8.72L8 6.32A1 1 0 017 7H4a1 1 0 00-1 1v11a1 1 0 001 1h16a1 1 0 001-1V8a1 1 0 00-1-1h-3a1 1 0 01-.95-.68L15.28 4zM12 7.5a5.5 5.5 0 015.5 5.5 5.51 5.51 0 01-5.5 5.5 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"></path></svg></span>
+              <span role="img"><svg width="24" height="24" className="icon_svg"><path d="M16 2a1 1 0 01.95.68L17.72 5H20a3 3 0 013 3v11a3 3 0 01-3 3H4a3 3 0 01-3-3V8a3 3 0 013-3h2.28l.77-2.32A1 1 0 018 2h8zm-.72 2H8.72L8 6.32A1 1 0 017 7H4a1 1 0 00-1 1v11a1 1 0 001 1h16a1 1 0 001-1V8a1 1 0 00-1-1h-3a1 1 0 01-.95-.68L15.28 4zM12 7.5a5.5 5.5 0 015.5 5.5 5.51 5.51 0 01-5.5 5.5 5.5 5.5 0 010-11zm0 2a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"></path></svg></span>
               Add photo
             </button>
             <button>
-              <span role="img"><svg width="24" height="24" class="icon_svg"><path d="M13 5.414V17a1 1 0 01-2 0V5.414L9.707 6.707a1 1 0 01-1.414-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 11-1.414 1.414L13 5.414zM17 11a1 1 0 010-2h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2v-9a2 2 0 012-2h3a1 1 0 110 2H4v9h16v-9h-3z"></path></svg></span>
+              <span role="img"><svg width="24" height="24" className="icon_svg"><path d="M13 5.414V17a1 1 0 01-2 0V5.414L9.707 6.707a1 1 0 01-1.414-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 11-1.414 1.414L13 5.414zM17 11a1 1 0 010-2h3a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2v-9a2 2 0 012-2h3a1 1 0 110 2H4v9h16v-9h-3z"></path></svg></span>
               Share
             </button>
             <button>
-              <span role="img"><svg width="24" height="24" class="icon_svg"><path d="M19 22a.994.994 0 01-.581-.186L12 17.229l-6.419 4.585A1 1 0 014 21V5a3.003 3.003 0 013-3h10a3.003 3.003 0 013 3v16a1 1 0 01-1 1zm-7-7c.208 0 .412.065.581.187L18 19.056V5a1 1 0 00-1-1H7a1 1 0 00-1 1v14.057l5.419-3.87A.998.998 0 0112 15z"></path></svg></span>
+              <span role="img"><svg width="24" height="24" className="icon_svg"><path d="M19 22a.994.994 0 01-.581-.186L12 17.229l-6.419 4.585A1 1 0 014 21V5a3.003 3.003 0 013-3h10a3.003 3.003 0 013 3v16a1 1 0 01-1 1zm-7-7c.208 0 .412.065.581.187L18 19.056V5a1 1 0 00-1-1H7a1 1 0 00-1 1v14.057l5.419-3.87A.998.998 0 0112 15z"></path></svg></span>
               Save
             </button>
           </div>
@@ -94,7 +92,7 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie, history, setHistory
           </div>
           <div className={`col outlineBox`}>
             <div className="row">
-              <a className="centered" href="#">{bizObject.website}</a>
+              <a className="centered" href="/">{bizObject.website}</a>
               <div style={{flex:1}}/>
               <svg width="24" height="24"><path d="M20.47 3.07a.5.5 0 01.53.46v6a.5.5 0 01-.39.49.58.58 0 01-.19 0 .47.47 0 01-.35-.15L17.8 7.6l-5 5a1 1 0 01-1.41 0 1 1 0 010-1.41l5-5-2.27-2.27a.5.5 0 01.35-.85h6zM20 21H4a1 1 0 01-1-1V4a1 1 0 011-1h6a1 1 0 010 2H5v14h14v-5a1 1 0 012 0v6a1 1 0 01-1 1z"></path></svg>
             </div>
