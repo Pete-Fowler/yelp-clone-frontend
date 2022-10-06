@@ -22,9 +22,6 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie}) {
 
   const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id} userId={userId} sessionCookie={sessionCookie}/>))
 
-  console.log(bizObject.address);
-
-
   return (
     <div className="col">
       <div id={style.photoHeader} style={{ background: `linear-gradient(to bottom, transparent, rgba(0,0,0,0.75)), url(${bizObject.image_url})`, position:"relative"}}>
