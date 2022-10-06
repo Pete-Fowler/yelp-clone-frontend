@@ -42,3 +42,7 @@ a {
 .component {
   display: none;
 }
+
+.headerSpan {
+  padding-block: 5px;
+}

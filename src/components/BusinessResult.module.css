@@ -64,4 +64,21 @@
   top: 3px;
 }
 
+.transactionBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .8rem;
+}
+
+.transaction {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+
+.svg {
+  color: #2eb187;
+}
+
 

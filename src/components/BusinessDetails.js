@@ -36,7 +36,7 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie, history, setHistory
    ref.current.scrollIntoView({behavior: 'smooth'});
   };
 
-  const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id} userId={userId} sessionCookie={sessionCookie}/>))
+  const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id} userId={userId} sessionCookie={sessionCookie} isLoggedIn={isLoggedIn}/>))
 
   console.log(history)
 
@@ -45,8 +45,8 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie, history, setHistory
       <div id={style.photoHeader} style={{ background: `linear-gradient(to bottom, transparent, rgba(0,0,0,0.75)), url(${bizObject.image_url})`, position:"relative"}}>
         <div className="col" style={{bottom:0, left:0, position:"absolute"}}>
           <h1>{bizObject.name}</h1>
-          <span>{bizObject.reviews.length !== 0 ? <StarRating reviews={bizObject.reviews}/> : null}</span>
-          <span> {bizObject.price} • {bizObject.business_type} </span>
+          <span className={style.headerSpan}>{bizObject.reviews.length !== 0 ? <StarRating reviews={bizObject.reviews}/> : null}</span>
+          <span className={style.headerSpan}> {bizObject.price} • {bizObject.business_type} </span>
         </div>
       </div>
       <div className="row centered" id={style.page}>
