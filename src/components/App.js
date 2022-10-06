@@ -17,6 +17,7 @@ function App() {
   const [userId, setUserId] = useState(JSON.parse(localStorage.getItem("userId")))
   useEffect(() => { localStorage.setItem("userId", userId == null? "0" : JSON.stringify(userId));
   }, [userId]);
+  const [history, setHistory] = useState(false)
 
   const isLoggedIn = sessionCookie !== null
 
@@ -28,9 +29,9 @@ function App() {
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie} isLogin={true} setUserId={setUserId}/>}/>
         <Route path="/signup" element={<LoginSignup setSessionCookie={setSessionCookie} isLogin={false} setUserId={setUserId}/>}/>
         <Route path="/businesses" element={<div/>}/>
-        <Route path="/review/:bizId" element={<CreateReview userId={userId} sessionCookie={sessionCookie}/>}/>
+        <Route path="/review/:bizId" element={<CreateReview userId={userId} sessionCookie={sessionCookie} setHistory={setHistory}/>}/>
         <Route path="/search/:term" element={<SearchResults/>} />
-        <Route path="/business/:id" element={<BusinessDetails isLoggedIn={isLoggedIn} userId={userId} sessionCookie={sessionCookie}/>} />
+        <Route path="/business/:id" element={<BusinessDetails isLoggedIn={isLoggedIn} userId={userId} sessionCookie={sessionCookie} history={history} setHistory={setHistory}/>} />
       </Routes>
       <Footer/>
     </div>

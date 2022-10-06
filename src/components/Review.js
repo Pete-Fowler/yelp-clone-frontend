@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react"
 import React, { useState } from "react"
 import StarRating from "./StarRating"
 import style from "./Review.module.css"
@@ -90,6 +89,8 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
         window.location.reload()
       })
   }
+
+  
 
   return (
     <div className="col" style={{margin:"1rem 0rem", position:"relative"}}>

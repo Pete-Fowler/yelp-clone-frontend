@@ -5,7 +5,7 @@ import style from "./BusinessDetails.module.css"
 import Review from "./Review";
 import StarRating from "./StarRating";
 
-function BusinessDetails({isLoggedIn, userId, sessionCookie}) {
+function BusinessDetails({isLoggedIn, userId, sessionCookie, history, setHistory}) {
 
   const [bizObject, setBizObject] = useState({reviews:[], })
 
@@ -19,6 +19,16 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie}) {
       setBizObject(data)
     })
   }, [id])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [!history])
+
+
+  useEffect(() => {
+    window.scrollTo(0, 500)
+    setHistory(false)
+  }, [history])
 
   const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id} userId={userId} sessionCookie={sessionCookie}/>))
 

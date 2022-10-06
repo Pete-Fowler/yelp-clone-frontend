@@ -3,7 +3,7 @@ import StarRating from "./StarRating"
 import style from "./CreateReview.module.css"
 import { useNavigate, useParams } from "react-router-dom";
 
-function CreateReview({ userId, sessionCookie }) {
+function CreateReview({ userId, sessionCookie, setHistory }) {
   const [rating, setRating] = useState(0)
   const [hover, setHover] = useState(0)
   const [comment, setComment] = useState('')
@@ -19,6 +19,10 @@ function CreateReview({ userId, sessionCookie }) {
       setBizName(data.name)
     })
   }, [bizId])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   function handleCommentChange(event) {
     setComment(event.target.value)
@@ -69,9 +73,11 @@ function CreateReview({ userId, sessionCookie }) {
       body: JSON.stringify(newReview),
     })
     .then(r => r.json())
+    .then(setHistory(true))
     .then(newReview => {
       navigate(`/business/${bizId}`)
     })
+    
   }
 
   const percent = hover /5 * 100
