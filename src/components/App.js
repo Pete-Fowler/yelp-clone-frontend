@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App col">
-      <Header isLoggedIn={isLoggedIn} logOut={()=>{setSessionCookie(null)}}/>
+      <Header isLoggedIn={isLoggedIn} logOut={()=>{setSessionCookie(null)}} setHistory={setHistory}/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<LoginSignup setSessionCookie={setSessionCookie} isLogin={true} setUserId={setUserId}/>}/>

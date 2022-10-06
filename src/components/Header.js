@@ -5,7 +5,7 @@ import styles from './Header.module.css';
 import SearchBar from './SearchBar';
 import { Link, useNavigate } from "react-router-dom";
 
-function Header({ isLoggedIn, logOut }) {
+function Header({ isLoggedIn, logOut, setHistory }) {
   const [ onHome, setOnHome ] = useState(true);
 
   useEffect(() => {
@@ -35,9 +35,9 @@ function Header({ isLoggedIn, logOut }) {
 
   return (
     <nav className={styles.nav + ' ' + headerClass}>
-      <Link to="/"><img className={styles.logo} src={logoSrc} alt='Yelp logo' /></Link>
+      <Link to="/"><img className={styles.logo} src={logoSrc} alt='Yelp logo' onClick={() => setHistory(false)}/></Link>
       <div style={{flex:1}}/>
-      <SearchBar />
+      <SearchBar setHistory={setHistory}/>
       <div style={{flex:1}}/>
       {userArea}
     </nav>

@@ -77,12 +77,14 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
       <div className="row">
         <img style={{borderRadius:"50%", width:"4rem", height:"4rem", marginRight:"0.5rem", marginBottom:"0.5rem"}}  src={pfp} alt={`${username}'s icon`}/>
         <div className="col">
-          <div className={style.edit}>{user.id === userId ?  <div><button onClick={startPatch}>Edit</button></div>  : "" }</div>
-          <div className={style.delete}>{user.id === userId ?  <div><button onClick={handleDelete}>Delete</button></div>  : "" }</div>
           <span style={{fontSize:"1.25rem"}}>{username}</span>
           <span>{patch ? 
             <StarRatingPicker rate={rate} rating={rating} changeColor={changeColor} color={color} parent={'editReview'}/>
             : <StarRating reviews={[{star_rating: star_rating}]} displayDetails={false}/>}</span>
+        </div>
+        <div className={style.buttonContainer}>
+          <div>{user.id === userId ?  <button onClick={startPatch} className={style.edit}>Edit</button>  : "" }</div>
+          <div>{user.id === userId ?  <button className={style.delete} onClick={handleDelete}>Delete</button>  : "" }</div>
         </div>
       </div>
       <span>{patch ? 

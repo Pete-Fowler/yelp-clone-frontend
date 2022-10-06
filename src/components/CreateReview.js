@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 function CreateReview({ userId, sessionCookie, setHistory }) {
   const [rating, setRating] = useState(0)
-  const [hover, setHover] = useState(0)
+  const [color, setColor] = useState('#FFD56A')
   const [comment, setComment] = useState('')
   const [bizName, setBizName] = useState("")
 
