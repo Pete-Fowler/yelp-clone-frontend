@@ -14,7 +14,7 @@ export default function SearchBar ({ setHistory }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setHistory(false)
+    setHistory(false);
     navigate(`/search/${searchTerm}`);
   }
 
