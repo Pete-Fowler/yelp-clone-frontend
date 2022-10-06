@@ -26,6 +26,7 @@ export default function SearchResults() {
       reviews={biz.reviews}
       price={biz.price}
       image_url={biz.image_url}
+      transactions={biz.transactions}
     />)}
   </div>
 }
