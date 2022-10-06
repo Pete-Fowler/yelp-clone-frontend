@@ -3,47 +3,15 @@
   margin-top: 2rem;
 }
 
-.starBox {
-  width: 25px;
-  height: 25px;
-  line-height: 25px;
-  color: white;
-  font-size: 1rem;
-  border-radius: 5px;
+.textareaBox {
   position: relative;
-  z-index: 5;
-  text-align: center;
-  border: 2px solid white;
-  box-shadow: 0px 0px 0px 2px white;
-  padding: 0px;
-}
-
-
-.rating {
-  display: flex;
-  align-self: center;
-  margin: 0px auto;
-  position: absolute;
-  width: fit-content;
-  z-index: 0;
-  overflow: hidden;
-  margin-top: 2rem;
-  justify-self: flex-start;
-  margin-top: 2rem;
-  margin-left: 2rem;
 }
 
 .textbox {
   width: 50em;
   height: 25em;
   padding-top: 5rem;
-}
-
-.hoverText {
-  margin-top: 1.75rem;
-  margin-left: 10rem;
-  padding: .5rem;
-  position: absolute;
+  background: white;
 }
 
 .submitButton {
