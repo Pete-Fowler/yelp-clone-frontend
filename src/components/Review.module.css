@@ -29,9 +29,11 @@
 .buttonContainer {
     display: flex;
     flex-direction: row;
+    position: relative;
     width: 20rem;
     gap: 20px;
-    padding-left: 35rem;
+    padding-left: 32rem;
+    height: 25px;
 }
 
 .textbox {
