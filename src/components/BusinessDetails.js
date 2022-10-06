@@ -23,7 +23,7 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie}) {
   const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id} userId={userId} sessionCookie={sessionCookie}/>))
 
   console.log(bizObject.address);
-  
+
 
   return (
     <div className="col">
@@ -92,7 +92,7 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie}) {
             <hr/>
             <div className="row">
               <div className="col">
-                <a href="#">Get Directions</a>
+                <a href={"https://www.google.com/maps/dir/?api=1&destination=" + bizObject.address}>Get Directions</a>
                 <span style={{color:"rgba(110,112,114,1)", fontSize:"16px"}}>{bizObject.address}</span>
               </div>
               <div style={{flex:1}}/>
