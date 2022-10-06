@@ -22,13 +22,13 @@ function Header({ isLoggedIn, logOut }) {
   const navigate = useNavigate()
 
   let userArea = (
-    <div className={"row " + styles.userArea}>
+    <div className={"row"} id={styles.userArea}>
       <button className={loginClass} onClick={()=>{navigate("/login")}}>Log In</button>
       <button className={'red ' + styles.signUp + ' ' + styles.headerBtn} onClick={()=>{navigate("/signup")}}>Sign Up</button>
     </div>
   )
   if (isLoggedIn) {
-    userArea = ( <button className={'red ' + styles.signUp + ' ' + styles.headerBtn} onClick={logOut}> Log Out </button> )
+    userArea = ( <div id={styles.userArea}><button className={'red ' + styles.signUp + ' ' + styles.headerBtn} onClick={logOut}> Log Out </button></div>)
   }
 
 
@@ -36,9 +36,7 @@ function Header({ isLoggedIn, logOut }) {
   return (
     <nav className={styles.nav + ' ' + headerClass}>
       <Link to="/"><img className={styles.logo} src={logoSrc} alt='Yelp logo' /></Link>
-      <div style={{flex:1}}/>
       <SearchBar />
-      <div style={{flex:1}}/>
       {userArea}
     </nav>
   )

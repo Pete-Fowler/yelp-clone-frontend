@@ -1,9 +1,9 @@
 .searchBar {
   width: 100%;
-  max-width: 1000px;
+  max-width: 627px;
   height: 48px;
   margin-right: auto;
-  margin-left: 20px;
+  margin-left: 33px;
   border-radius: 5px;
   box-shadow: 0 2px 18px #00000026;
 }
@@ -61,5 +61,5 @@
   margin-top: auto;
   margin-bottom: auto;
   width: 2px;
-  height: 80%;
+  height: 60%;
 }
