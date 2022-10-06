@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import style from './Home.module.css';
 
@@ -8,6 +8,10 @@ function Home() {
   function randomSearch(ignoredEvent) {
     navigate("/search/"+String.fromCharCode(Math.floor(Math.random() * (91 - 65) + 65)))
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0) 
+  }, [])
 
   return (
     <div id='home' className="col" style={{ textAlign: "center" }}>
