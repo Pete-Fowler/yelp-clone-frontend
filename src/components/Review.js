@@ -10,8 +10,8 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie}
 
   const [patch, setPatch] = useState(false);
   const [newComment, setNewComment] = useState('');
-  const [color, setColor] = useState('#FFD56A');
-  const [rating, setRating] = useState(0);
+  const [color, setColor] = useState('#ff643d');
+  const [rating, setRating] = useState(star_rating);
 
   // Passed to StarRatingPicker to update state
   function rate(value) {
