@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 import style from "./BusinessDetails.module.css"
 import Review from "./Review";
 import StarRating from "./StarRating";
 
-function BusinessDetails({isLoggedIn, userId, sessionCookie}) {
+function BusinessDetails({isLoggedIn, userId, sessionCookie, history, setHistory}) {
 
   const [bizObject, setBizObject] = useState({reviews:[], })
 
   const navigate = useNavigate()
   const { id } = useParams();
+
+  const ref = useRef(history);
 
   useEffect(() => {
     console.log(id)
@@ -20,7 +22,23 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie}) {
     })
   }, [id])
 
-  const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id} userId={userId} sessionCookie={sessionCookie}/>))
+  
+  useEffect(() => {
+    if (history === true) {
+    return handleLoad
+  }
+  else window.scrollTo(0, 0) 
+  }, [history])
+  
+
+  const handleLoad = () => {
+    ref.current &&
+   ref.current.scrollIntoView({behavior: 'smooth'});
+  };
+
+  const reviewNodes = bizObject.reviews.map(review=>(<Review review={review} key={review.id} userId={userId} sessionCookie={sessionCookie} isLoggedIn={isLoggedIn}/>))
+
+  console.log(history)
 
   return (
     <div className="col">
@@ -51,7 +69,7 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie}) {
               Save
             </button>
           </div>
-          <div>
+          <div ref={ref}>
             <h2 style={{marginTop:"2rem"}}>Recommended Reviews</h2>
             {reviewNodes.reverse()}
           </div>

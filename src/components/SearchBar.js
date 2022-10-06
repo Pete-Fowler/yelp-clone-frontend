@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './SearchBar.module.css';
 import searchIcon from '../images/searchIcon.svg';
 
-export default function SearchBar () {
+export default function SearchBar ({ setHistory }) {
   const [ searchTerm, setSearchTerm ] = useState("")
 
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ export default function SearchBar () {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setHistory(false)
     navigate(`/search/${searchTerm}`);
   }
 

@@ -5,7 +5,7 @@ import styles from './Header.module.css';
 import SearchBar from './SearchBar';
 import { Link, useNavigate } from "react-router-dom";
 
-function Header({ isLoggedIn, logOut }) {
+function Header({ isLoggedIn, logOut, setHistory }) {
   const [ onHome, setOnHome ] = useState(true);
 
   useEffect(() => {

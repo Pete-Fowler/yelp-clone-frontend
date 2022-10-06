@@ -11,15 +11,27 @@
 }
 
 .edit {
-  margin-left: 30rem;
-  position: absolute;
-  display: flex;
+  padding: 5px;
+  align-content: flex-end;
+  background-color: #e00707;
+  color: white;
+  width: 70px;
 }
 
 .delete {
-  margin-left: 35rem;
-  position: absolute;
-  display: flex;
+  padding: 5px;
+  align-content: flex-end;
+  background: #e00707;
+  color: white;
+  width: 70px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    width: 20rem;
+    gap: 20px;
+    padding-left: 35rem;
 }
 
 .textbox {
