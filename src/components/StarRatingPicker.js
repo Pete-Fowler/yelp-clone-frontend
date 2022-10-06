@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import style from './StarRatingPicker.module.css';
 
 export default function StarRatingPicker({ rate, rating, changeColor, color, parent }) {
+
+  const colors = ['#FFD56A', '#FFA448', '#ff7e42', '#ff523d', '#f43939'];
+
+  useEffect(() => {
+    const i = colors[Math.floor(rating - 1)];
+    changeColor(i)
+  }, [])
 
   function hoverRating() {
     if (rating == 0) {
@@ -22,7 +29,7 @@ export default function StarRatingPicker({ rate, rating, changeColor, color, par
     else if (rating == 5) {
         return "Great"
     }
-}
+  }
 
   const starAverage = rating;
 
@@ -45,8 +52,6 @@ export default function StarRatingPicker({ rate, rating, changeColor, color, par
       }
     }
   
-  const colors = ['#FFD56A', '#FFA448', '#ff7e42', '#ff523d', '#f43939'];
-
   const starRatingPicker = starArr.map((val, index) => {
     return <div key={index}
     className={style.starBox}
