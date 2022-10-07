@@ -8,12 +8,9 @@ function Home() {
   function categorySearch(term) {
     navigate(`/search/${term}`);
   }
-  function randomSearch() {
-    navigate("/search/"+String.fromCharCode(Math.floor(Math.random() * (91 - 65) + 65)))
-  }
 
   useEffect(() => {
-    window.scrollTo(0, 0) 
+    window.scrollTo(0, 0)
   }, [])
 
   return (
@@ -52,7 +49,7 @@ function Home() {
             <img src="https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_design_cdn/7fc312973cf8/assets/img/svg_illustrations/40x40_home_services_v2.svg" alt="home"/>
             Home Services
           </button>
-          <button className={style.category} onClick={randomSearch}>
+          <button className={style.category} onClick={() => categorySearch('all')}>
             <img src="https://s3-media0.fl.yelpcdn.com/assets/public/40x40_more_v2.yji-961fdce2fd036f85fb01.svg" alt="all"/>
             All
           </button>

@@ -14,7 +14,7 @@ export default function SearchResults() {
       setSearchResults(data)
     });
   }, [term])
-  
+
 
   return <div className='col'>
     {searchResults.map(biz => <BusinessResult
