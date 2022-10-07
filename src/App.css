@@ -51,6 +51,7 @@ button.red:hover {
   padding: 60px 0;
   justify-content: center;
   gap: 50px;
+  background-color: #f7f7f7;
 }
 
 #footer > div {
