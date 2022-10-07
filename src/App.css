@@ -49,18 +49,25 @@ button.red:hover {
 
 #footer {
   padding: 60px 0;
+  justify-content: center;
+  gap: 50px;
 }
+
 #footer > div {
   margin: 0 12px;
 }
+
 #footer a {
   color: rgba(110,112,114,1);
-  text-decoration: none;
+
   line-height: 20px;
   font-size: 14px;
   margin-top: 8px;
 }
 
+#footer a:hover {
+  text-decoration-line: underline;
+}
 
 .softBottomBorder {
   border-bottom: 1px solid #ebebeb;

@@ -4,7 +4,6 @@ import React from 'react'
 function Footer() {
   return (
     <div className="row" id="footer">
-      <div style={{flex:"1"}}/>
       <div className="col">
         <strong>About</strong>
         <a href="#">About Yelp</a>
