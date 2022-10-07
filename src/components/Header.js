@@ -36,7 +36,9 @@ function Header({ isLoggedIn, logOut, setHistory }) {
   return (
     <nav className={styles.nav + ' ' + headerClass}>
       <Link to="/"><img className={styles.logo} src={logoSrc} alt='Yelp logo' /></Link>
+      <div style={{flex:1}}/>
       <SearchBar setHistory={setHistory}/>
+      <div style={{flex:1}}/>
       {userArea}
     </nav>
   )
