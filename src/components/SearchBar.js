@@ -1,10 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './SearchBar.module.css';
 import searchIcon from '../images/searchIcon.svg';
 
 export default function SearchBar ({ setHistory }) {
   const [ searchTerm, setSearchTerm ] = useState("")
+
+  useEffect(() => {
+    const url = window.location.href.split("/")
+    if (url[url.length-2]==="search"){
+      setSearchTerm(url[url.length-1])
+    }
+  }, [window.location.href])
 
   const navigate = useNavigate();
 
