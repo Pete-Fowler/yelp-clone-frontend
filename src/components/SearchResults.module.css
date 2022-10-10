@@ -1,0 +1,19 @@
+.buttonBox {
+  display: flex;
+}
+
+.btn {
+  color: lightgray;
+  font-weight: 900;
+  border: none;
+}
+
+.btn:hover {
+  box-shadow: none;
+  background-color: #ffffff;
+}
+
+
+.body {
+  align-items: center;
+}

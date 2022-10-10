@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import BusinessResult from './BusinessResult';
+import styles from './SearchResults.module.css';
 
 
 export default function SearchResults() {
@@ -30,7 +31,9 @@ export default function SearchResults() {
     }
   }
 
-  return <div className='col'>
+  console.log(searchResults);
+
+  return <div className={'col ' + styles.body}>
     {searchResults.map(biz => <BusinessResult
       key={biz.id}
       id={biz.id}
@@ -42,6 +45,9 @@ export default function SearchResults() {
       image_url={biz.image_url}
       transactions={biz.transactions}
     />)}
-    <button onClick={forward}>{'>'}</button><button onClick={back}>{'<'}</button>
+    <div className={styles.buttonBox}>
+      <button className={styles.btn} onClick={back}>{'<'}</button>
+      <button className={styles.btn} onClick={forward}>{'>'}</button>
+    </div>
   </div>
 }
