@@ -62,7 +62,7 @@ export default function StarRatingPicker({ rate, rating, changeColor, color, par
       }
     } 
    
-    style={{background: `linear-gradient(90deg, ${color}, ${color} ${val * 100}%, #bbbac0 ${val * 100}%)`}}>★</div>
+    style={{background: `linear-gradient(90deg, ${color} ${val * 100}%, #bbbac0 ${val * 100}%)`}}>★</div>
   })
 
   return <div className={style.rating + ' ' + parent}>{starRatingPicker}
