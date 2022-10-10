@@ -25,7 +25,7 @@ export default function SearchBar ({ setHistory }) {
     if (searchTerm === "") {
       setSearchTerm("all")
     }
-    navigate(`/search/${searchTerm}`);
+    navigate(`/search/${searchTerm}/page/1`);
   }
 
   return <div className={styles.searchBar}>

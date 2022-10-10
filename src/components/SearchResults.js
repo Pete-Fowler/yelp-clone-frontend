@@ -1,20 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import BusinessResult from './BusinessResult';
 
 
 export default function SearchResults() {
-  const { term } = useParams();
-
+  const { term, page } = useParams();
   const [searchResults, setSearchResults ] = useState([]);
+  const [ newPage, setNewPage ] = useState(parseInt(page));
+
+  const navigate = useNavigate();
+
   useEffect(() => {
-    fetch(`http://localhost:9292/businesses/search/${term}`)
+    fetch(`http://localhost:9292/businesses/search/${term}/page/${page}`)
     .then(res => res.json())
     .then(data => {
       setSearchResults(data)
     });
-  }, [term])
+  }, [term, page])
 
+  function forward() {
+    setNewPage(newPage => newPage + 1);
+    navigate(`/search/${term}/page/${newPage + 1}`);
+  }
+
+  function back() {
+    if(page > 1) {
+      setNewPage(newPage => newPage - 1);
+      navigate(`/search/${term}/page/${newPage - 1}`)
+    }
+  }
 
   return <div className='col'>
     {searchResults.map(biz => <BusinessResult
@@ -28,5 +42,6 @@ export default function SearchResults() {
       image_url={biz.image_url}
       transactions={biz.transactions}
     />)}
+    <button onClick={forward}>{'>'}</button><button onClick={back}>{'<'}</button>
   </div>
 }
