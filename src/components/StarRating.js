@@ -32,7 +32,7 @@ function StarRating({ reviews, displayDetails = true }) {
   }
 
   const stars = starArr.map((val, i) => {
-    return <div key={i} className={style.starBox} style={{background: `linear-gradient(90deg, #ff643d, #ff643d ${val * 100}%, #bbbac0 ${val * 100}%)`}}>★</div>
+    return <div key={i} className={style.starBox} style={{background: `linear-gradient(90deg, #ff643d ${val * 100}%, #bbbac0 ${val * 100}%)`}}>★</div>
   })
 
   
