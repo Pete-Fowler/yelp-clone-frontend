@@ -6,7 +6,7 @@ function Home() {
   const navigate = useNavigate()
 
   function categorySearch(term) {
-    navigate(`/search/${term}/page/1`);
+    navigate(`/search/${term}`);
   }
 
   useEffect(() => {
