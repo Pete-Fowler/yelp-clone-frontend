@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function LoginSignup({setSessionCookie, isLogin, setUserId}) {
+  const url = process.env.REACT_APP_URL;
+
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
-
   const [errorText, setErrorText] = useState("")
-
   const navigate = useNavigate();
 
   function handleSubmit(event) {
@@ -19,7 +20,7 @@ function LoginSignup({setSessionCookie, isLogin, setUserId}) {
     else
     { setErrorText("") }
 
-    fetch(`http://localhost:9292/${isLogin?"login":"signup"}`,{
+    fetch(`${url}/${isLogin?"login":"signup"}`,{
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         username: username,

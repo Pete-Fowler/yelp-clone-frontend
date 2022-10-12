@@ -4,6 +4,8 @@ import StarRatingPicker from "./StarRatingPicker";
 import style from "./Review.module.css";
 
 function Review({review:{comment, star_rating, user, id}, userId, sessionCookie, isLoggedIn}) {
+  const url = process.env.REACT_APP_URL;
+
   const { username, profile_picture } = user
 
   let pfp = profile_picture==null? "https://s3-media0.fl.yelpcdn.com/assets/srv0/yelp_styleguide/514f6997a318/assets/img/default_avatars/user_60_square.png" : profile_picture
@@ -39,7 +41,7 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie,
       "comment": newComment
     }
 
-    fetch(`http://localhost:9292/review/${id}`, {
+    fetch(`${url}/review/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +60,7 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie,
       "session_cookie": sessionCookie
     }
 
-    fetch(`http://localhost:9292/review/${id}`, {
+    fetch(`${url}/review/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -96,7 +98,5 @@ function Review({review:{comment, star_rating, user, id}, userId, sessionCookie,
     </div>
   )
 }
-/*<div className={style.textareaBox}>
-        <StarRatingPicker rate={rate} rating={rating} changeColor={changeColor} color={color}/>
-        <textarea type="text" placeholder="I*/
+
 export default Review

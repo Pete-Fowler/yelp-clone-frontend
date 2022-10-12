@@ -4,6 +4,8 @@ import style from "./CreateReview.module.css"
 import { useNavigate, useParams } from "react-router-dom";
 
 function CreateReview({ userId, sessionCookie, setHistory }) {
+  const url = process.env.REACT_APP_URL;
+
   const [rating, setRating] = useState(0)
   const [color, setColor] = useState('#FFD56A')
   const [comment, setComment] = useState('')
@@ -14,7 +16,7 @@ function CreateReview({ userId, sessionCookie, setHistory }) {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(`http://localhost:9292/business/${bizId}`)
+    fetch(`${url}/business/${bizId}`)
     .then(r=>r.json()).then((data)=>{
       setBizName(data.name)
     })
@@ -40,7 +42,7 @@ function CreateReview({ userId, sessionCookie, setHistory }) {
             "session_cookie": sessionCookie
         }
 
-    fetch("http://localhost:9292/review/", {
+    fetch(`${url}/review/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

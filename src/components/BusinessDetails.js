@@ -6,6 +6,7 @@ import Review from "./Review";
 import StarRating from "./StarRating";
 
 function BusinessDetails({isLoggedIn, userId, sessionCookie, history, setHistory}) {
+  const url = process.env.REACT_APP_URL;
 
   const [bizObject, setBizObject] = useState({reviews:[], })
 
@@ -15,7 +16,7 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie, history, setHistory
   const ref = useRef(history);
 
   useEffect(() => {
-    fetch(`http://localhost:9292/business/${id}`)
+    fetch(`${url}/business/${id}`)
     .then(r=>r.json()).then((data)=>{
       setBizObject(data)
     })

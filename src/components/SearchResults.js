@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import BusinessResult from './BusinessResult';
 
-
 export default function SearchResults() {
-  const { term } = useParams();
+  const url = process.env.REACT_APP_URL;
 
+  const { term } = useParams();
   const [searchResults, setSearchResults ] = useState([]);
+ 
   useEffect(() => {
-    fetch(`http://localhost:9292/businesses/search/${term}`)
+    fetch(`${url}/businesses/search/${term}`)
     .then(res => res.json())
     .then(data => {
       setSearchResults(data)
