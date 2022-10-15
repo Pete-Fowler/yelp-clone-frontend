@@ -22,10 +22,10 @@ export default function BusinessResult({ id, name, type, address, reviews, price
 
   const transactionsJsx = transactionsArray.map((t, index) => <div key={index} className={styles.transaction}>{svg}{t === "restaurant_reservation" ? 'Reservations' : t[0].toUpperCase() + t.slice(1)}</div>);
 
-  return <div onClick={()=>{navigate(`/business/${id}`)}} className={`${styles.listing} softBottomBorder centered`}>
+  return <div onClick={()=>{navigate(`/businesses/${id}`)}} className={`${styles.listing} softBottomBorder centered`}>
     <img className={styles.img} src={image_url} alt='Restaurant or food' />
     <div className={styles.content}>
-      <p className={styles.link} to={`/business/${id}`}> {name}</p>
+      <p className={styles.link} to={`/businesses/${id}`}> {name}</p>
       <div><StarRating reviews={reviews}/></div>
       <div>
         <span className={styles.type}>{type} </span>

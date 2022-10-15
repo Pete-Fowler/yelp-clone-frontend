@@ -31,7 +31,7 @@ function App() {
         <Route path="/businesses" element={<div/>}/>
         <Route path="/review/:bizId" element={<CreateReview userId={userId} sessionCookie={sessionCookie} setHistory={setHistory}/>}/>
         <Route path="/search/:term" element={<SearchResults/>} />
-        <Route path="/business/:id" element={<BusinessDetails isLoggedIn={isLoggedIn} userId={userId} sessionCookie={sessionCookie} history={history} setHistory={setHistory}/>} />
+        <Route path="/businesses/:id" element={<BusinessDetails isLoggedIn={isLoggedIn} userId={userId} sessionCookie={sessionCookie} history={history} setHistory={setHistory}/>} />
       </Routes>
       <Footer/>
     </div>
