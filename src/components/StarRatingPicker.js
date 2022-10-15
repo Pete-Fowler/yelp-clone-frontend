@@ -68,4 +68,4 @@ export default function StarRatingPicker({ rate, rating, changeColor, color, par
   return <div className={style.rating + ' ' + parent}>{starRatingPicker}
     <p className={style.hoverText}>{hoverRating()}</p>
     </div>
-}
+} 

@@ -16,7 +16,7 @@ function BusinessDetails({isLoggedIn, userId, sessionCookie, history, setHistory
   const ref = useRef(history);
 
   useEffect(() => {
-    fetch(`${url}/business/${id}`)
+    fetch(`${url}/businesses/${id}`)
     .then(r=>r.json()).then((data)=>{
       setBizObject(data)
     })

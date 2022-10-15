@@ -16,7 +16,7 @@ function CreateReview({ userId, sessionCookie, setHistory }) {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(`${url}/business/${bizId}`)
+    fetch(`${url}/businesses/${bizId}`)
     .then(r=>r.json()).then((data)=>{
       setBizName(data.name)
     })
@@ -52,7 +52,7 @@ function CreateReview({ userId, sessionCookie, setHistory }) {
     .then(r => r.json())
     .then(setHistory(true))
     .then(newReview => {
-      navigate(`/business/${bizId}`)
+      navigate(`/businesses/${bizId}`)
     })
     
   }
