@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from "react";
 
 function Footer() {
   return (
@@ -17,7 +16,6 @@ function Footer() {
         <a href="#/">Privacy Policy</a>
         <a href="#/">Ad Choices</a>
         <a href="#/">Manage Cookies</a>
-
       </div>
       <div className="col">
         <strong>Discover</strong>

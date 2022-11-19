@@ -1,7 +1,7 @@
 #photoHeader {
   height: 426px;
   background-color: black;
-  background-size: cover!important;
+  background-size: cover !important;
 }
 #photoHeader > div {
   color: white;
@@ -21,7 +21,7 @@ hr {
 }
 
 a {
-  color: rgba(2,122,151,1);
+  color: rgba(2, 122, 151, 1);
   text-decoration: none;
 }
 
